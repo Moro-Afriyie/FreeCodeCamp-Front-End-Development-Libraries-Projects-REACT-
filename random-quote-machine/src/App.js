@@ -19,7 +19,7 @@ function App() {
                 <button className="button" id="new-quote" style={{backgroundColor: "rgb(189, 187, 153)"}}>New quote</button>
             </div>
         </div>
-        <div className="footer">by <a href={"https://codepen.io/hezag/"}>hezag</a></div>
+        <div className="footer">by <a href={"https://codepen.io/hezag/"}>Moro</a></div>
     </div>
         
             
