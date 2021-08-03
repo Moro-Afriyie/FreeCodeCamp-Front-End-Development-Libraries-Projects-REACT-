@@ -1,9 +1,10 @@
 import './App.css';
+import Quote from './quote';
 
 function App() {
     return (
             <div>
-                <h1>Random quote machine</h1>
+                <Quote />
             </div>
             
         );
