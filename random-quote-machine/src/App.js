@@ -5,6 +5,7 @@ function App() {
             <div>
                 <h1>Random quote machine</h1>
             </div>
+            
         );
    
     }
