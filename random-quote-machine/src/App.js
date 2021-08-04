@@ -5,9 +5,8 @@ import {useState, useEffect} from 'react';
 function App() {
     const [quotes , setQuotes] = useState([]); // state to handle the quotes
     const [randomQuote, setRandomQuote] = useState([]); // state to get random quotes
-    //let color = Math.floor(Math.random() * colors.length);
-    const [colour, setColor] = useState('');
     const colors = ['#16a085','#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964','#342224', '#472E32', '#BDBB99', '#77B1A9','#73A857'];
+    const [colour, setColor] = useState(colors[Math.floor(Math.random() * colors.length)]);
     const twitterLink =  'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
     encodeURIComponent('"' + randomQuote.quote + '" ' + randomQuote.author);
 
@@ -21,19 +20,22 @@ function App() {
             setQuotes(data.quotes);
             const randomIndex = Math.floor(Math.random()*data.quotes.length);
             setRandomQuote(data.quotes[randomIndex]);
-            let color = Math.floor(Math.random() * colors.length);
-            setColor(colors[color]);
-            console.log('color: ', colour)
+            document.body.style.backgroundColor = colour;
+            document.body.style.color = colour;
         }
-        fetchData();
-    },[]);
+        fetchData();    
+    },[colour]);
    
 
     // Get random quotes from the api
     const handleRandomQuotes = ()=>{
     if (quotes.length!==0){
         const randomIndex = Math.floor(Math.random()*quotes.length);
+        let color = Math.floor(Math.random() * colors.length);
         setRandomQuote(quotes[randomIndex]);
+        document.body.style.backgroundColor = colour;
+        document.body.style.color = colour;
+       
     }
     }
     
