@@ -5,8 +5,6 @@ import {useState, useEffect, useRef} from 'react';
 function App() {
     const [quotes , setQuotes] = useState([]); // state to handle the quotes
     const [randomQuote, setRandomQuote] = useState('');
-    let quote = '';
-    let author = '';
     const APIURL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
 
     //API CALL
@@ -18,21 +16,7 @@ function App() {
             const randomIndex = Math.floor(Math.random()*data.quotes.length);
             setRandomQuote(data.quotes[randomIndex]);
         }
-        // fetch(APIURL)
-        // .then(res=> {
-        //     return res.json();
-        // })
-        // .then(data=>{
-        //     // quoteRef.current = data.quotes;
-        //         setQuotes(data.quotes);
-        //         console.log(quotes);
-        //         if(quotes.length>0){
-        //             // console.log("quotes: ",quotes);
-        //             getRandomQuotes();
-        //         }  
-        // })
         fetchData();
-
     },[]);
    
 
@@ -40,31 +24,10 @@ function App() {
     const handleRandomQuotes = ()=>{
     if (quotes.length!==0){
         const randomIndex = Math.floor(Math.random()*quotes.length);
-        console.log("getRandomQuotes: ", randomIndex);   
-        // return randomIndex;
-        setRandomQuote(quotes[randomIndex])
-        quote = quotes[randomIndex].quote;
-        author = quotes[randomIndex].author;
-        console.log("quote: ", quote);
-        console.log("author: ", author);
-        // currentRef.current = quote;
-        // setCurrentQuote(currentRef.current);
-        // console.log("current: ",currentQuote);
-        // setCurrentQuote(quote);
-        // console.log("current: ",currentQuote);
-        return randomIndex;
-
+        setRandomQuote(quotes[randomIndex]);
     }
     }
-    // const getQuote= ()=>{
-    //     const a = getRandomQuotes();
-    //    console.log("a: ", a)
-    // }
     
-
- 
-
-
     return (
     <div id="wrapper">
         { <div id="quote-box">
@@ -81,9 +44,7 @@ function App() {
             </div>
         </div>}
      
-    </div>
-        
-            
+    </div>    
         );
    
     }
