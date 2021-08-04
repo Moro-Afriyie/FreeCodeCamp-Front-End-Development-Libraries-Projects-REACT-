@@ -33,9 +33,10 @@ function App() {
         const randomIndex = Math.floor(Math.random()*quotes.length);
         let color = Math.floor(Math.random() * colors.length);
         setRandomQuote(quotes[randomIndex]);
+        setColor(colors[color]);
         document.body.style.backgroundColor = colour;
         document.body.style.color = colour;
-       
+      
     }
     }
     
