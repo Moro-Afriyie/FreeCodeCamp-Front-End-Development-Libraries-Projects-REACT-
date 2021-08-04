@@ -44,10 +44,10 @@ function App() {
     <div id="wrapper">
         { <div id="quote-box">
         { quotes.length !==0 &&
-            <div className="quote-text" style={{opacity: '1'}}>
+            <div className="quote-text" colour>
                <i className="fa fa-quote-left"> </i><span id="text">{randomQuote.quote}</span>
             </div>}
-           {quotes.length !==0 && <div className="quote-author" style={{opacity: '1'}}>- <span id="author">{randomQuote.author}</span></div>}
+           {quotes.length !==0 && <div className="author" colour>- <span id="author">{randomQuote.author}</span></div>}
             <div className="buttons">
                 <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top" href={twitterLink} style={{backgroundColor: colour}}>
                     <i className="fa fa-twitter"></i><span>Tweet</span>
