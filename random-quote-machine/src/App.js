@@ -17,10 +17,13 @@ function App() {
         .then(data=>{
             setQuotes(data.quotes);
             console.log("quotes: ", quotes);
+           
         })
-        // getRandomQuotes();
+        .then(()=>{
+            getRandomQuotes();
+        })
 
-    },[]);
+    },[quotes.length]);
     // Get random quotes from the api
     const getRandomQuotes = ()=>{
     const randomIndex = Math.floor(Math.random()*quotes.length);
@@ -29,10 +32,9 @@ function App() {
     console.log('index: ', randomIndex );
     console.log('quote: ', currentQuote );
     console.log('author: ', currentAuthor );
-
-
-
     }
+
+    
     return (
     <div id="wrapper">
         <div id="quote-box">
@@ -48,8 +50,10 @@ function App() {
             </div>
         </div>
      
-    </div>  
-    );
+    </div>
+        
+            
+        );
    
     }
 
