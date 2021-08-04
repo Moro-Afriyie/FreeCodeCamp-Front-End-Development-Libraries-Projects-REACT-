@@ -13,11 +13,10 @@ function App() {
         fetch(APIURL)
         .then(res=> res.json())
         .then(res=>{
-            console.log(res.quotes);
             setQuotes(res.quotes);
             console.log("quotes: ", quotes);
         })
-    });
+    },[]);
     // Get random quotes from the api
     const randomQuotes = ()=>{
     const randomIndex = Math.floor(Math.random()*quotes.length);
