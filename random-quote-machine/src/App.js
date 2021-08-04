@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 function App() {
     const [quotes , setQuotes] = useState([]); // state to handle the quotes
     const [randomQuote, setRandomQuote] = useState([]); // state to get random quotes
-    const colors = ['#16a085','#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964','#342224', '#472E32', '#BDBB99', '#77B1A9','#73A857'];
+    const colors = ['rgb(9, 242, 250)','#16a085','#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964','#342224', '#472E32', '#BDBB99', '#77B1A9','#73A857'];
     const [colour, setColor] = useState(colors[Math.floor(Math.random() * colors.length)]);
     const twitterLink =  'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
     encodeURIComponent('"' + randomQuote.quote + '" ' + randomQuote.author);
@@ -49,10 +49,10 @@ function App() {
             </div>}
            {quotes.length !==0 && <div className="quote-author" style={{opacity: '1'}}>- <span id="author">{randomQuote.author}</span></div>}
             <div className="buttons">
-                <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top" href={twitterLink} style={{backgroundColor: "rgb(9, 242, 250)"}}>
+                <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top" href={twitterLink} style={{backgroundColor: colour}}>
                     <i className="fa fa-twitter"></i><span>Tweet</span>
                 </a>
-                <button className="button" id="new-quote" style={{backgroundColor: "rgb(9, 242, 250)"}} onClick={handleRandomQuotes}>New quote</button>
+                <button className="button" id="new-quote" style={{backgroundColor: colour}} onClick={handleRandomQuotes}>New quote</button>
             </div>
         </div>}
      
