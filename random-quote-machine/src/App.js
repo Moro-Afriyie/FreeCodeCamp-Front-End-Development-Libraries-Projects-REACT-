@@ -41,7 +41,7 @@ function App() {
             <div className="quote-author" style={{opacity: '1'}}>- <span id="author">Maya Angelou</span></div>
             <div className="buttons">
                 <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top" href="https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22I%E2%80%99ve%20learned%20that%20people%20will%20forget%20what%20you%20said%2C%20people%20will%20forget%20what%20you%20did%2C%20but%20people%20will%20never%20forget%20how%20you%20made%20them%20feel.%22%20Maya%20Angelou" style={{backgroundColor: "rgb(9, 242, 250)"}}>
-                    <i className="fa fa-twitter">tweet</i>
+                    <i className="fa fa-twitter"></i><span>Tweet</span>
                 </a>
                 <button className="button" id="new-quote" style={{backgroundColor: "rgb(9, 242, 250)"}}>New quote</button>
             </div>

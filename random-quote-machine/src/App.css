@@ -49,6 +49,10 @@ div {
   margin: auto;
   display: block;
 }
+a{
+  text-decoration: none;
+  font-family:sans-serif ;
+}
 #quote-box .buttons .button {
  
     border: none;
@@ -62,6 +66,9 @@ div {
     height: 45px;
     cursor: pointer;
 }
+.button:hover {
+  opacity: 0.9;
+}
 #quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#tumblr-quote {
   float: left;
   padding: 0px;
@@ -70,8 +77,12 @@ div {
   font-size: 1.5rem;
   margin-right: 5px;
   height: 40px;
-  width: 45px;
+  width: 8rem;
 
+}
+.buttons span{
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
 }
 #quote-box .buttons .button#new-quote {
   float: right;
