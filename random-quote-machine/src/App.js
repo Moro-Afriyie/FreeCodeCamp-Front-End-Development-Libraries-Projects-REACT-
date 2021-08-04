@@ -18,6 +18,7 @@ function App() {
             setQuotes(data.quotes);
             console.log("quotes: ", quotes);
         })
+        // getRandomQuotes();
 
     },[]);
     // Get random quotes from the api
@@ -47,10 +48,8 @@ function App() {
             </div>
         </div>
      
-    </div>
-        
-            
-        );
+    </div>  
+    );
    
     }
 
