@@ -9,6 +9,11 @@ function App() {
 
     //API CALL
     useEffect(() => {
+        fetch(APIURL)
+        .then(res=> res.json)
+        .then(res=>{
+            console.log(res);
+        })
 
     })
     // Get random quotes from the api
