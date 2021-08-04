@@ -41,10 +41,7 @@ function App() {
             <div className="quote-author" style={{opacity: '1'}}>- <span id="author">Maya Angelou</span></div>
             <div className="buttons">
                 <a className="button" id="tweet-quote" title="Tweet this quote!" target="_top" href="https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22I%E2%80%99ve%20learned%20that%20people%20will%20forget%20what%20you%20said%2C%20people%20will%20forget%20what%20you%20did%2C%20but%20people%20will%20never%20forget%20how%20you%20made%20them%20feel.%22%20Maya%20Angelou" style={{backgroundColor: "rgb(9, 242, 250)"}}>
-                    <i className="fa fa-twitter"></i>
-                </a>
-                <a className="button" id="tumblr-quote" rel="noreferrer" title="Post this quote on tumblr!" target="_blank" href="https://www.tumblr.com/widgets/share/tool?posttype=quote&amp;tags=quotes,freecodecamp&amp;caption=Maya%20Angelou&amp;content=I%E2%80%99ve%20learned%20that%20people%20will%20forget%20what%20you%20said%2C%20people%20will%20forget%20what%20you%20did%2C%20but%20people%20will%20never%20forget%20how%20you%20made%20them%20feel.&amp;canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&amp;shareSource=tumblr_share_button" style={{backgroundColor: "rgb(9, 242, 250)"}}>
-                    <i className="fa fa-tumblr"></i>
+                    <i className="fa fa-twitter">tweet</i>
                 </a>
                 <button className="button" id="new-quote" style={{backgroundColor: "rgb(9, 242, 250)"}}>New quote</button>
             </div>
