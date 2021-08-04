@@ -11,14 +11,15 @@ function App() {
     //API CALL
     useEffect(() => {
         fetch(APIURL)
-        .then(res=> res.json())
-        .then(res=>{
-            setQuotes(res.quotes);
+        .then(res=> return res.json())
+        .then(data=>{
+            setQuotes(data.quotes);
             console.log("quotes: ", quotes);
         })
+
     },[]);
     // Get random quotes from the api
-    const randomQuotes = ()=>{
+    const getRandomQuotes = ()=>{
     const randomIndex = Math.floor(Math.random()*quotes.length);
     currentQuote = quotes[randomIndex].quote;
     currentAuthor = quotes[randomIndex].author;
