@@ -11,7 +11,9 @@ function App() {
     //API CALL
     useEffect(() => {
         fetch(APIURL)
-        .then(res=> return res.json())
+        .then(res=> {
+            return res.json();
+        })
         .then(data=>{
             setQuotes(data.quotes);
             console.log("quotes: ", quotes);
