@@ -4,5 +4,21 @@
 }
 
 .App {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid red;
+  // height: 100vh;
+  padding: 2rem 1rem;
  
+ .editor-container{
+   display: flex;
+   flex-direction: column;
+   border: 1px solid black;
+   width: 30rem;
+ }
+ #preview{
+  flex: 1;
+  border: 1px solid;
+ }
 }
