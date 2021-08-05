@@ -57,7 +57,7 @@ function App() {
     <main className="App">
       <div className="editor-container">
        <div className="editor-header">
-        <h3>Editor</h3>
+        <h3 className="heading">Editor</h3>
        </div>
       <textarea id="editor" type="text" value={markdown} onChange={handleChange}>
 
@@ -65,6 +65,9 @@ function App() {
     
     </div>
      <div className="preview-container">
+     <div className="preview-header">
+        <h3 className="heading">Previewer</h3>
+       </div>
       <div id="preview" dangerouslySetInnerHTML={{
           __html: marked(markdown,{breaks: true})}}>
       </div>
