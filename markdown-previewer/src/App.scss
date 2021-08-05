@@ -5,20 +5,31 @@
 
 .App {
   display: flex;
-  align-items: center;
   gap: 2rem;
   border: 1px solid red;
   // height: 100vh;
   padding: 2rem 1rem;
- 
+ &>div{
+height: 85vh;
+ }
  .editor-container{
    display: flex;
    flex-direction: column;
    border: 1px solid black;
    width: 30rem;
+   textarea{
+     height: 100%;
+   }
+ }
+ .preview-container{
+   flex: 1;
+  max-width: 800px;
+  /* overflow: auto; */
+  overflow-y: auto;
  }
  #preview{
-  flex: 1;
-  border: 1px solid;
+  img{
+    max-width: 100%;
+  }
  }
 }
