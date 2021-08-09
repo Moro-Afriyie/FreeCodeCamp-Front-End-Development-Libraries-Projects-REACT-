@@ -5,10 +5,21 @@ function App() {
     <main className="App">
       <h1 className="title">Drum Machine</h1>
       <div className="drum-container">
-        <h2>Drum container</h2>
+        <drumPads />
       </div>
     </main>
   );
 }
+
+const drumPads = () => {
+  return ( 
+      <div className="drum-pads">
+<h1>Drum pads
+</h1>
+      </div>
+   );
+}
+ 
+
 
 export default App;
