@@ -1,6 +1,6 @@
 import './App.css';
 
-const clips = ['A','B','C','D','E','F','G']
+const clips = ['A','B','C','D','E','F']
 function App() {
   return (
     <main className="App">
@@ -11,6 +11,8 @@ function App() {
     </main>
   );
 }
+
+
 const DrumPads = ({clips}) => {
   return ( 
       <div className="drum-pads">
