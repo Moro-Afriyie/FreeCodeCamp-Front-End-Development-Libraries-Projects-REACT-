@@ -1,22 +1,26 @@
 import './App.css';
 
+const clips = ['A','B','C','D','E','F','G']
 function App() {
   return (
     <main className="App">
       <h1 className="title">Drum Machine</h1>
       <div className="drum-container">
-        <DrumPads />
+        <DrumPads clips={clips}/>
       </div>
     </main>
   );
 }
-const DrumPads = () => {
+const DrumPads = ({clips}) => {
   return ( 
       <div className="drum-pads">
-          <button className="btn">
-            click me
-            <audio src=""></audio>
-          </button>
+  {clips.map(key => {
+    return (
+      <button key={key }className="btn">
+      {key}
+      <audio src=""></audio>
+      </button>
+  )})}  
       </div>
    );
 }
