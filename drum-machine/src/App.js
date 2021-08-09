@@ -16,7 +16,7 @@ const DrumPads = ({clips}) => {
       <div className="drum-pads">
   {clips.map(key => {
     return (
-      <button key={key }className="btn">
+      <button key={key} className="btn">
       {key}
       <audio src=""></audio>
       </button>
