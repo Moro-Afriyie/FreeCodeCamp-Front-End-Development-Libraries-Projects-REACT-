@@ -5,12 +5,12 @@ function App() {
     <main className="App">
       <h1 className="title">Drum Machine</h1>
       <div className="drum-container">
-        <drumPads />
+        <DrumPads />
       </div>
     </main>
   );
 }
-const drumPads = () => {
+const DrumPads = () => {
   return ( 
       <div className="drum-pads">
           <h1>Drum pads </h1>
