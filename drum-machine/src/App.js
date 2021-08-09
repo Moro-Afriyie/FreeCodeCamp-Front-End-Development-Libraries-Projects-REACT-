@@ -13,7 +13,10 @@ function App() {
 const DrumPads = () => {
   return ( 
       <div className="drum-pads">
-          <h1>Drum pads </h1>
+          <button className="btn">
+            click me
+            <audio src=""></audio>
+          </button>
       </div>
    );
 }
