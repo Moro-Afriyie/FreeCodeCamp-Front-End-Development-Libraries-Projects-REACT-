@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    margin: 3rem 0;
+}
