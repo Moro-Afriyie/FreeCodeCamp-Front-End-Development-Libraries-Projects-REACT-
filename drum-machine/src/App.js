@@ -10,16 +10,14 @@ function App() {
     </main>
   );
 }
-
 const drumPads = () => {
   return ( 
       <div className="drum-pads">
-<h1>Drum pads
-</h1>
+          <h1>Drum pads </h1>
       </div>
    );
 }
- 
+
 
 
 export default App;
