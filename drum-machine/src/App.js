@@ -2,9 +2,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <h1 className="title">Drum Machine</h1>
-    </div>
+      <div className="drum-container">
+        <h2>Drum container</h2>
+      </div>
+    </main>
   );
 }
 
