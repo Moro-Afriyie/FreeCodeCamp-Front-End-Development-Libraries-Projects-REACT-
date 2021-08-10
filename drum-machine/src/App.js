@@ -74,11 +74,9 @@ function App() {
 const DrumPads = ({clip}) => {
  
   const handlePlaySound = () =>{
-    console.log(clip.keyTrigger);
     const sound = document.getElementById(clip.keyTrigger);
-    console.log(sound)
-    // sound.currentTime = 0;
-    // sound.play()
+    sound.currentTime = 0;
+    sound.play()
   }
 
   return ( 

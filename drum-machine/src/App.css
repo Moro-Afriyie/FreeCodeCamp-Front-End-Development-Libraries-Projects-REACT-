@@ -13,5 +13,12 @@
 }
 .btn{
     font-size: 2rem;
-    padding: 1.5rem 2rem;
+    width: 6rem;
+    height: 6rem;
+}
+.drum-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:10px;
 }
