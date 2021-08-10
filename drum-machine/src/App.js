@@ -59,7 +59,7 @@ const bankOne = [
 ];
 
 function App() {
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(1);
 
 
   const handleVolumeChange=(e)=>{
@@ -79,9 +79,10 @@ function App() {
       <div className="volume-slider">
       <input
       onChange={handleVolumeChange}
-       type="range" 
+       type="range"
+       step="0.01" 
        min="0" 
-       max="100" 
+       max="1" 
        value={volume} />
       </div>
     </main>
