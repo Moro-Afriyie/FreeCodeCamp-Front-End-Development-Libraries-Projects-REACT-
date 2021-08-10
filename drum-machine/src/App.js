@@ -125,11 +125,10 @@ function App() {
   useEffect(()=>{
     if(toggle){
       setBanks(bankTwo);
-      setaudioID("Smooth Piano Kit");
+      
     }
     else{
       setBanks(bankOne);
-      setaudioID("Heater Kit");
     }
   },[toggle])
 
@@ -138,6 +137,12 @@ function App() {
   }
   const handleToggle =(e)=>{
     setToggle(e.target.checked);
+    if(e.target.checked){
+      setaudioID("Smooth Piano Kit");
+    }
+    else{
+      setaudioID("Heater Kit");
+    }
   }
   return (
     <main className="App">
