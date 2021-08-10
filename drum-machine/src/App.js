@@ -99,17 +99,18 @@ const DrumPads = ({clip}) => {
 
   return ( 
       <div className="drum-pads">
-      <button
-       key={clip.keyCode}
-       className="btn"
-       id={clip.id}
-       onClick={handlePlaySound}
-       >
-      <audio 
-      id={clip.keyTrigger} 
-      src={clip.url}></audio>
-      {clip.keyTrigger}
-      </button>
+          <button
+          key={clip.keyCode}
+          className="btn"
+          id={clip.id}
+          onClick={handlePlaySound}
+          >
+            <audio 
+            id={clip.keyTrigger} 
+            src={clip.url}>
+            </audio>
+          {clip.keyTrigger}
+          </button>
       </div>
    );
 }
