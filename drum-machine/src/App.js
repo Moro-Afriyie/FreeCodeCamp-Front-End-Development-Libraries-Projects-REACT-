@@ -59,6 +59,7 @@ const bankOne = [
 ];
 
 function App() {
+  const [volume, setVolume] = useState();
   return (
     <main className="App">
       <h1 className="title">Drum Machine</h1>
@@ -66,6 +67,9 @@ function App() {
         {bankOne.map((clip)=>{
              return <DrumPads key={clip.id} clip={clip}/>
         })}
+      </div>
+      <div className="volume-slider">
+      <input type="range" min="0" max="100" value={volume} />
       </div>
     </main>
   );
