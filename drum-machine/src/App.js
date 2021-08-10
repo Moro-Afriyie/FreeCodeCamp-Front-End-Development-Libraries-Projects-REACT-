@@ -125,11 +125,11 @@ function App() {
   useEffect(()=>{
     if(toggle){
       setBanks(bankTwo);
-      // setaudioID("Smooth Piano Kit");
+      setaudioID("Smooth Piano Kit");
     }
     else{
       setBanks(bankOne);
-      // setaudioID("Heater Kit");
+      setaudioID("Heater Kit");
     }
   },[toggle])
 
