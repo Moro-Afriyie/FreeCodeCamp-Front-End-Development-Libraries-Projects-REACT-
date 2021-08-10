@@ -121,19 +121,16 @@ function App() {
   const [audioID, setaudioID] = useState("");
   const [toggle, setToggle] = useState(false);
   const [banks, setBanks] = useState(bankOne);
-  // Smooth Piano Kit
-  // Heater Kit
 
   useEffect(()=>{
     if(toggle){
       setBanks(bankTwo);
-      setaudioID("Smooth Piano Kit");
+      // setaudioID("Smooth Piano Kit");
     }
     else{
       setBanks(bankOne);
-      setaudioID("Heater Kit");
+      // setaudioID("Heater Kit");
     }
-    console.log(banks);
   },[toggle])
 
   const handleVolumeChange=(e)=>{
