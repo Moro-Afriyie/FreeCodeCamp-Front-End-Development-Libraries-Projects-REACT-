@@ -62,35 +62,38 @@ function App() {
     <main className="App">
       <h1 className="title">Drum Machine</h1>
       <div className="drum-container">
-        <DrumPads clips={bankOne}/>
+        {bankOne.map((clip)=>{
+             return <DrumPads key={clip.id} clip={clip}/>
+        })}
       </div>
     </main>
   );
 }
 
 
-const DrumPads = ({clips}) => {
-
-  const handlePlayAudio = () =>{
-    console.log("button clicked");
+const DrumPads = ({clip}) => {
+ 
+  const handlePlaySound = () =>{
+    console.log(clip.keyTrigger);
+    const sound = document.getElementById(clip.keyTrigger);
+    console.log(sound)
+    // sound.currentTime = 0;
+    // sound.play()
   }
 
   return ( 
       <div className="drum-pads">
-  {clips.map(key => {
-    return (
       <button
-       key={key.keyCode}
+       key={clip.keyCode}
        className="btn"
-       id={key.id}
-       onClick={handlePlayAudio}
+       id={clip.id}
+       onClick={handlePlaySound}
        >
       <audio 
-      id={key.keyTrigger} 
-      src={key.url} />
-      {key.keyTrigger}
+      id={clip.keyTrigger} 
+      src={clip.url}></audio>
+      {clip.keyTrigger}
       </button>
-  )})}  
       </div>
    );
 }
