@@ -90,6 +90,10 @@ function App() {
        max="1" 
        value={volume} />
       </div>
+      <label class="toggle">
+        <input type="checkbox" id="cToggle"/>
+        <span class="slider"></span>
+      </label>
     </main>
   );
 }
