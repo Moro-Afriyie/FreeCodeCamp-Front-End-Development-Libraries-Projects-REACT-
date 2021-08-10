@@ -1,4 +1,5 @@
 import './App.css';
+import {useState, useEffect} from 'react';
 
 const bankOne = [
   {
@@ -73,6 +74,23 @@ function App() {
 
 const DrumPads = ({clip}) => {
  
+
+  // useEffect to handle keyPress
+  useEffect(()=>{
+    // add Keydown event listener
+    document.addEventListener("keydown", handleKeyPress);
+    // clean up function
+    return ()=>{
+      document.removeListener("keydown", handleKeyPress);
+    }
+  }, [])
+
+  const handleKeyPress=(event)=>{
+    if(event.keyCode === clip.keyCode){
+      handlePlaySound();
+    }
+  }
+
   const handlePlaySound = () =>{
     const sound = document.getElementById(clip.keyTrigger);
     sound.currentTime = 0;
