@@ -85,8 +85,10 @@ const DrumPads = ({clips}) => {
        id={key.id}
        onClick={handlePlayAudio}
        >
-      <audio id={key.keyTrigger} src={key.url}></audio>
-      {key}
+      <audio 
+      id={key.keyTrigger} 
+      src={key.url} />
+      {key.keyTrigger}
       </button>
   )})}  
       </div>
