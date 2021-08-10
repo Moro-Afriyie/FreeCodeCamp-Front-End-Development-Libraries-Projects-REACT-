@@ -119,7 +119,7 @@ const DrumPads = ({clip, volume, setaudioID}) => {
     sound.volume = volume; // set the volume
     sound.currentTime = 0;
     sound.play();
-    setaudioID(clip.id); // display the sound being played
+    setaudioID(clip.id.replace(/-/g, ' ')); // display the sound being played
   }
 
   return ( 
