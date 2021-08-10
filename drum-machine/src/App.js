@@ -81,7 +81,7 @@ const DrumPads = ({clip}) => {
     document.addEventListener("keydown", handleKeyPress);
     // clean up function
     return ()=>{
-      document.removeListener("keydown", handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress);
     }
   }, [])
 
