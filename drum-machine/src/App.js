@@ -80,12 +80,13 @@ const DrumPads = ({clips}) => {
   {clips.map(key => {
     return (
       <button
-       key={key}
+       key={key.keyCode}
        className="btn"
+       id={key.id}
        onClick={handlePlayAudio}
        >
+      <audio id={key.keyTrigger} src={key.url}></audio>
       {key}
-      <audio src=""></audio>
       </button>
   )})}  
       </div>
