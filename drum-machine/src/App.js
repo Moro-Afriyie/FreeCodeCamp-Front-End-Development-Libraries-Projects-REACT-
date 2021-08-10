@@ -60,6 +60,7 @@ const bankOne = [
 
 function App() {
   const [volume, setVolume] = useState(1);
+  const [audioID, setaudioID] = useState("")
 
 
   const handleVolumeChange=(e)=>{
@@ -73,8 +74,12 @@ function App() {
              return <DrumPads 
              key={clip.id} 
              clip={clip}
-             volume={volume}/>
+             volume={volume}
+             setaudioID={setaudioID}/>
         })}
+      </div>
+      <div className="display-audio">
+        <h3>{audioID}</h3>
       </div>
       <div className="volume-slider">
       <input
@@ -90,7 +95,7 @@ function App() {
 }
 
 
-const DrumPads = ({clip, volume}) => {
+const DrumPads = ({clip, volume, setaudioID}) => {
  
 
   // useEffect to handle keyPress
@@ -113,7 +118,9 @@ const DrumPads = ({clip, volume}) => {
     const sound = document.getElementById(clip.keyTrigger);
     sound.volume = volume; // set the volume
     sound.currentTime = 0;
-    sound.play()
+    sound.play();
+    setaudioID(clip.id);
+    console.log(clip.id);
   }
 
   return ( 
@@ -131,6 +138,7 @@ const DrumPads = ({clip, volume}) => {
           {clip.keyTrigger}
           </button>
       </div>
+      
    );
 }
 
