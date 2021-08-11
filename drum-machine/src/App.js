@@ -160,14 +160,18 @@ function App() {
         <h3>{audioID}</h3>
         <h3>{`toggle: ${toggle}`}</h3>
       </div>
-      <div className="volume-slider">
-      <input
-      onChange={handleVolumeChange}
-       type="range"
-       step="0.01" 
-       min="0" 
-       max="1" 
-       value={volume} />
+      <div className="slider">
+        <p>15</p>
+        <label class="custom-range-slider range">
+            <input
+            onChange={handleVolumeChange}
+            type="range"
+            step="0.01" 
+            min="0" 
+            max="1" 
+            value={volume} />
+        </label>
+        <p>15</p>
       </div>
       <label className="toggle">
         <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
