@@ -158,9 +158,9 @@ function App() {
           })}
         </div>
         <div className="controls">
-          <div id="display">
-            <h3>{audioID}</h3>
-          </div>
+      
+            <p id="display">{audioID}</p>
+         
           <div className="volume">
             {volume>0? <span className="material-icons md-24">
                 volume_up
@@ -227,14 +227,14 @@ const DrumPads = ({clip, volume, setaudioID}) => {
   }
 
   return ( 
-      <div className="drum-pads">
+      <div className="drum-pad"id={clip.id}>
           <button
           key={clip.keyCode}
           className={active? "btn active": "btn"}
-          id={clip.id}
           onClick={handlePlaySound}
           >
             <audio 
+            className="clip"
             id={clip.keyTrigger} 
             src={clip.url}>
             </audio>
