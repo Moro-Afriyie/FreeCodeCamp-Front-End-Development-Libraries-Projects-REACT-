@@ -6,6 +6,7 @@
 }
 body{
   font-family: Russo One, sans-serif;
+  background-color: #b2bec3;
 }
 .App{
     display: flex;
@@ -20,6 +21,11 @@ body{
     width: 6rem;
     height: 6rem;
     font-family: Russo One, sans-serif;
+    border: none;
+    box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+border-radius: 8px;
 }
 .drum-container{
     display: grid;
@@ -28,29 +34,43 @@ body{
     gap:10px;
 }
 #drum-machine{
-  border: 1px solid red;
+  border: 10px solid #fdcb6e;
   display: flex;
   gap: 3rem;
   padding: 1rem;
+  background-color: #ffeaa7;
+  box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 }
 .controls{
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   align-self: center;
   gap: 2rem;
 }
 #display{
-  border: 1px solid;
+  border-radius: 5px;
   height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f9f5f5;
+  box-shadow: 0px 1px 7px -4px rgba(158, 60, 60, 0.75) inset;
+-webkit-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75) inset; 
 }
 
-
+.bank-container{
+  align-self: center;
+}
+.bank-container h3{
+  margin-bottom: 5px;
+  text-align: center;
+}
 /****SLIDER STYLES********/
 .volume{
+  background-color: #f9f5f5;
   display: flex;
   align-items: center;
   gap: 0.5rem;
