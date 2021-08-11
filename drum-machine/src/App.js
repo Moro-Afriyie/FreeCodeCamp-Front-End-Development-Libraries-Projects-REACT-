@@ -157,31 +157,33 @@ function App() {
               setaudioID={setaudioID}/>
           })}
         </div>
-        <div className="display-audio" id="display">
-          <h3>{audioID}</h3>
-        </div>
-        <div className="volume">
-          {volume>0? <span className="material-icons md-24">
-              volume_up
-              </span> : <span className="material-icons md-24">
-              volume_off
-              </span>
-          }
-          <label className="custom-range-slider range">
-              <input
-              onChange={handleVolumeChange}
-              type="range"
-              step="0.01" 
-              min="0" 
-              max="1" 
-              value={volume} />
+        <div className="controls">
+          <div id="display">
+            <h3>{audioID}</h3>
+          </div>
+          <div className="volume">
+            {volume>0? <span className="material-icons md-24">
+                volume_up
+                </span> : <span className="material-icons md-24">
+                volume_off
+                </span>
+            }
+            <label className="custom-range-slider range">
+                <input
+                onChange={handleVolumeChange}
+                type="range"
+                step="0.01" 
+                min="0" 
+                max="1" 
+                value={volume} />
+            </label>
+            <p>{Math.floor(volume*100)}</p>
+          </div>
+          <label className="toggle">
+            <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
+            <span className="slider"></span>
           </label>
-          <p>{Math.floor(volume*100)}</p>
         </div>
-        <label className="toggle">
-          <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
-          <span className="slider"></span>
-        </label>
       </div>
     </main>
   );
