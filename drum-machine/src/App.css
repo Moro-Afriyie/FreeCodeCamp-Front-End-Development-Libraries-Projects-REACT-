@@ -64,7 +64,17 @@ input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
 }
 
-/* input[type=range]::-moz-range-thumb */
+input[type=range]::-moz-range-thumb{
+  border: none;
+  box-shadow: none;
+  height: 25px;
+  width: 10px;
+  border-radius: 12px;
+  background: #0097f0;
+  -webkit-appearance: none;
+  margin: -9px 0 0 0;
+  outline: none;
+}
 input[type=range]::-ms-thumb{
   border: none;
   box-shadow: none;
