@@ -121,7 +121,7 @@ function App() {
   const [audioID, setaudioID] = useState("");
   const [toggle, setToggle] = useState(false);
   const [banks, setBanks] = useState(bankOne);
-
+  
   useEffect(()=>{
     if(toggle){
       setBanks(bankTwo);
@@ -195,7 +195,7 @@ function App() {
 
 const DrumPads = ({clip, volume, setaudioID}) => {
  
-
+  const [active, setActive]= useState(false);
   // useEffect to handle keyPress
   useEffect(()=>{
     // add Keydown event listener
@@ -215,16 +215,22 @@ const DrumPads = ({clip, volume, setaudioID}) => {
   const handlePlaySound = () =>{
     const sound = document.getElementById(clip.keyTrigger);
     sound.volume = volume; // set the volume
+    setActive(true);
+    setTimeout(()=>{
+      setActive(false);
+    }, 200);
     sound.currentTime = 0;
     sound.play();
     setaudioID(clip.id.replace(/-/g, ' ')); // display the sound being played
+   
+    
   }
 
   return ( 
       <div className="drum-pads">
           <button
           key={clip.keyCode}
-          className="btn"
+          className={active? "btn active": "btn"}
           id={clip.id}
           onClick={handlePlaySound}
           >

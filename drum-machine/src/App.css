@@ -27,6 +27,9 @@ body{
 -moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 border-radius: 8px;
 }
+.active{
+  background-color: #fdcb6e;
+}
 .drum-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,7 +128,7 @@ input[type=range]::-moz-range-thumb{
   height: 25px;
   width: 10px;
   border-radius: 12px;
-  background: #0097f0;
+  background: #fdcb6e;
   -webkit-appearance: none;
   margin: -9px 0 0 0;
   outline: none;
@@ -136,7 +139,7 @@ input[type=range]::-ms-thumb{
   height: 25px;
   width: 10px;
   border-radius: 12px;
-  background: #0097f0;
+  background: #fdcb6e;
   -webkit-appearance: none;
   margin: -9px 0 0 0;
   outline: none;
@@ -147,7 +150,7 @@ input[type=range]::-webkit-slider-thumb {
   height: 25px;
   width: 10px;
   border-radius: 12px;
-  background: #0097f0;
+  background: #fdcb6e;
   -webkit-appearance: none;
   margin: -9px 0 0 0;
   outline: none;
@@ -166,6 +169,9 @@ input[type=range]::-webkit-slider-thumb {
   display: inline-block;
   width: 80px;
   height: 35px;
+  box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 }
 
 /* (C) CUSTOM TOGGLE BUTTON "OUTSIDE BOX" */
@@ -176,8 +182,8 @@ input[type=range]::-webkit-slider-thumb {
   left: 0; right: 0;
   /* (C2) COSMETIC STYLES */
   cursor: pointer;
-  border: 2px solid #b92121;
-  background-color: #bc2612;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #fdcb6e;
 }
 
 /* (D) CUSTOM TOGGLE BUTTON "INSIDE SLIDER BUTTON" */
@@ -190,7 +196,7 @@ input[type=range]::-webkit-slider-thumb {
   position: absolute;
   top: 0; left: 0;
   /* (D3) COSMETIC STYLES */
-  background-color: #eee;
+  background-color: rgb(0, 0, 0);
 }
 
 /* (E) ON CHECKED (SWITCHED ON) */
@@ -198,8 +204,8 @@ input[type=range]::-webkit-slider-thumb {
 .slider, .slider::before { transition: all 0.2s; }
 /* (E2) TURN GREEN */
 .toggle input:checked + .slider {
-  border: 2px solid #258805;
-  background-color: #8cbc13;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: #fdcb6e;
 }
 /* (E3) MOVE SLIDER BUTTON TO RIGHT */
 .toggle input:checked + .slider::before { left: 50%; }
@@ -217,7 +223,7 @@ input[type=range]::-webkit-slider-thumb {
     /* (F3) "OFF" TEXT */
     content: "1";
     text-align: center;
-    color: #fff;
+    color: rgb(0,0,0);
     font-size: 22px;
   }
   
