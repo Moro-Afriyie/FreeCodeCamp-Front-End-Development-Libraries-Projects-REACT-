@@ -179,10 +179,13 @@ function App() {
             </label>
             <p>{Math.floor(volume*100)}</p>
           </div>
-          <label className="toggle">
-            <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
-            <span className="slider"></span>
-          </label>
+          <div className="bank-container">
+            <h3>Bank</h3>
+            <label className="toggle">
+              <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
+              <span className="slider"></span>
+            </label>
+          </div>
         </div>
       </div>
     </main>

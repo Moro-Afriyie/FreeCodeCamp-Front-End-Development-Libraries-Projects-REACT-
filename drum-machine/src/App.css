@@ -35,6 +35,10 @@ body{
 }
 .controls{
   border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 2rem;
 }
 #display{
   border: 1px solid;
