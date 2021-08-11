@@ -171,7 +171,7 @@ function App() {
             max="1" 
             value={volume} />
         </label>
-        <p>15</p>
+        <p>{volume*100}</p>
       </div>
       <label className="toggle">
         <input type="checkbox" checked={toggle} onChange={handleToggle} id="cToggle"/>
