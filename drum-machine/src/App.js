@@ -161,7 +161,12 @@ function App() {
         <h3>{`toggle: ${toggle}`}</h3>
       </div>
       <div className="slider">
-        <p>15</p>
+        {volume>0? <span class="material-icons">
+            volume_up
+            </span> : <span class="material-icons">
+            volume_off
+            </span>
+        }
         <label class="custom-range-slider range">
             <input
             onChange={handleVolumeChange}
