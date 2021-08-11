@@ -24,13 +24,13 @@
 }
 
 /****SLIDER STYLES********/
-.slider{
+.volume{
   display: flex;
   align-items: center;
   gap: 0.5rem;
   border-radius: 5px;
-  padding: 0 1.5rem;
-  width: 300px;
+  padding: 1.2rem 0.5rem;
+  width: 315px;
 box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
@@ -41,7 +41,7 @@ box-shadow: 0px 1px 7px -4px rgba(0,0,0,0.75);
 }
 
 input[type=range] {
-  width: 200px;
+  width: 230px;
   -ms-appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
