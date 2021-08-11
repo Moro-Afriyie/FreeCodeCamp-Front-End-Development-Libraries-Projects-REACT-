@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+body{
+  font-family: Russo One, sans-serif;
 }
 .App{
     display: flex;
@@ -15,6 +19,7 @@
     font-size: 2rem;
     width: 6rem;
     height: 6rem;
+    font-family: Russo One, sans-serif;
 }
 .drum-container{
     display: grid;
@@ -136,7 +141,7 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   display: inline-block;
   width: 80px;
-  height: 30px;
+  height: 35px;
 }
 
 /* (C) CUSTOM TOGGLE BUTTON "OUTSIDE BOX" */
@@ -186,7 +191,7 @@ input[type=range]::-webkit-slider-thumb {
     position: absolute;
     top: 0; left: 50%;
     /* (F3) "OFF" TEXT */
-    content: "O";
+    content: "1";
     text-align: center;
     color: #fff;
     font-size: 22px;
@@ -194,6 +199,6 @@ input[type=range]::-webkit-slider-thumb {
   
   /* (G) ON INDICATOR */
   .toggle input:checked + .slider::after {
-    content: "I";
+    content: "2";
     left: 0;
   }
