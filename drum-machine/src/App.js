@@ -161,9 +161,9 @@ function App() {
         <h3>{`toggle: ${toggle}`}</h3>
       </div>
       <div className="slider">
-        {volume>0? <span class="material-icons">
+        {volume>0? <span className="material-icons">
             volume_up
-            </span> : <span class="material-icons">
+            </span> : <span className="material-icons">
             volume_off
             </span>
         }
