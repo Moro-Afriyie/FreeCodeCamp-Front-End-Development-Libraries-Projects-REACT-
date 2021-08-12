@@ -4,4 +4,5 @@ This repository contains the Front End Development Libraries course on Freecodec
 
 * Random Quote Machine : [https://codepen.io/moro-afriyie/pen/MWmqQqb](https://codepen.io/moro-afriyie/pen/MWmqQqb)
 * Markdown Previewer : [https://codepen.io/moro-afriyie/pen/ZEKqErr](https://codepen.io/moro-afriyie/pen/ZEKqErr)
+* Drum Machine : [https://codepen.io/moro-afriyie/pen/gOWqWJv](https://codepen.io/moro-afriyie/pen/gOWqWJv)
 
