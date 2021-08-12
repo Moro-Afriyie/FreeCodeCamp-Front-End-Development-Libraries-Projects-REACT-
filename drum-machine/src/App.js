@@ -86,13 +86,13 @@ const bankTwo = [
   {
     keyCode: 83,
     keyTrigger: 'S',
-    id: 'Open-HH',
+    id: 'Chord-S',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3'
   },
   {
     keyCode: 68,
     keyTrigger: 'D',
-    id: 'Closed-HH',
+    id: 'Chord-D',
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3'
   },
   {
@@ -114,7 +114,6 @@ const bankTwo = [
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3'
   }
 ];
-
 
 function App() {
   const [volume, setVolume] = useState(1);
