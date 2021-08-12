@@ -227,10 +227,10 @@ const DrumPads = ({clip, volume, setaudioID}) => {
   }
 
   return ( 
-      <div className="drum-pad"id={clip.id}>
-          <button
+     
+          <button id={clip.id}
           key={clip.keyCode}
-          className={active? "btn active": "btn"}
+          className={active ? "drum-pad btn active" : "drum-pad btn"}
           onClick={handlePlaySound}
           >
             <audio 
@@ -240,7 +240,6 @@ const DrumPads = ({clip, volume, setaudioID}) => {
             </audio>
           {clip.keyTrigger}
           </button>
-      </div>
       
    );
 }
