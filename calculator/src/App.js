@@ -72,21 +72,26 @@ function App() {
   const [decimal, setDecimal] = useState(true);
 
  const handleDisplay = (value)=>{
-  if(value === "."){
+  if(value === "." && decimal){
     setDecimal(false);
-    console.log(value);
+    setExpression(prev=>prev + value);
   }
-  // else{
-  //   setExpression(prev=>prev + value);
-  // if(expression[expression.length-1]==="="){
-  //   if(/[1-9]/.test(value)){
-  //     setExpression(value);
-  //   }
-  //   else{
-  //     setExpression(result + value)
-  //   }
-  // }
-  // }
+  else if (operators.includes(value) && decimal===false) {
+    setDecimal(true);
+    setExpression(prev=>prev + value);
+  }
+  else{
+    setExpression(prev=>prev + value);
+  }
+  
+  if(expression[expression.length-1]==="="){
+    if(/[1-9]/.test(value)){
+      setExpression(value);
+    }
+    else{
+      setExpression(result + value)
+    }
+  }
   
  }
 
