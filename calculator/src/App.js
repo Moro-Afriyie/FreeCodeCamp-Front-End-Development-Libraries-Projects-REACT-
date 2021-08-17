@@ -98,7 +98,7 @@ function App() {
  }
 
  const handleCalculate = ()=>{
-   // used the math-expression-evaluator library instead of eval since eval it is unsafe
+   // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
       result = mexp.eval(expression);
@@ -115,11 +115,24 @@ function App() {
  const handleAllClear = ()=>{
    setExpression("");
    setResult(0);
+   setDecimal(true);
  }
 
  const handleClear =()=>{
    setExpression(prev=>
-    prev.split("").slice(0, prev.length-1).join(""));
+    prev.split("")
+    .slice(0, -1)
+    .join("")
+    );
+
+    // implement the decimal logic
+    if(expression.split("").includes(".")){
+      setDecimal(false);
+    }
+    else{
+      setDecimal(true);
+    }
+    // setDecimal(false);  
     setResult(0);
  }
   return (
@@ -130,6 +143,9 @@ function App() {
         <button onClick={()=> handleDisplay("+")}>+</button>
         <button onClick={handleCalculate}>=</button>
         <button onClick={()=> handleDisplay(".")}>.</button>
+        <button onClick={handleAllClear}>AC</button>
+        <button onClick={handleClear}>C</button>
+
         <h1>{expression}</h1>
         <h2>{result}</h2>
       </div>
