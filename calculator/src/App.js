@@ -68,7 +68,8 @@ const calculatorNumbers = [
 
 function App() {
   const [result, setResult] = useState(0);
-  const [expression, setExpression] = useState("")
+  const [expression, setExpression] = useState("");
+  const [decimal, setDecimal] = useState(true);
 
  const handleDisplay = (value)=>{
   setExpression(prev=>prev + value);
@@ -84,16 +85,17 @@ function App() {
 
  const handleCalculate = ()=>{
    // used the math-expression-evaluator library instead of eval since eval it is unsafe
-    let result;
-    try {
-      result = mexp.eval(expression);
-    } catch (error) {
-      alert(error.message);
-      result = "NaN";
-    }
+    // let result;
+    // try {
+    //   result = mexp.eval(expression);
+    // } catch (error) {
+    //   alert(error.message);
+    //   result = "NaN";
+    // }
 
     // update "result" with the result of evaluation
-    setResult(result);
+    // setResult(result);
+    setResult(eval(expression));
     setExpression(prev=>prev + " = ");
  }
 
