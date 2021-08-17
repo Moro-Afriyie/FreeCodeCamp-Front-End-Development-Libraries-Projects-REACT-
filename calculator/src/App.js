@@ -5,20 +5,31 @@ function App() {
   const [result, setResult] = useState(0);
   const [expression, setExpression] = useState("")
 
- const handleClick = (value)=>{
+ const handleDisplay = (value)=>{
   setExpression(prev=>prev + value);
  }
 
  const handleCalculate = ()=>{
+  setResult(eval(expression));
   setExpression(prev=>prev + "=");
-  setResult(eval(expression))
+ }
+
+ const handleAllClear = ()=>{
+   setExpression("");
+   setResult(0);
+ }
+
+ const handleClear =()=>{
+   setExpression(prev=>
+    prev.split("").slice(0, prev.length-1).join(""));
+    setResult(0);
  }
   return (
     <main>
       <div className="App">
-        <button onClick={()=> handleClick("1")}>1</button>
-        <button onClick={()=> handleClick("2")}>1</button>
-        <button onClick={()=> handleClick("+")}>+</button>
+        <button onClick={()=> handleDisplay("1")}>1</button>
+        <button onClick={()=> handleDisplay("2")}>2</button>
+        <button onClick={()=> handleDisplay("+")}>+</button>
         <button onClick={()=> handleCalculate()}>=</button>
         <h1>{expression}</h1>
         <h2>{result}</h2>
