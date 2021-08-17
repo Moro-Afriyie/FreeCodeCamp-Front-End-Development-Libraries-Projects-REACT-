@@ -69,21 +69,23 @@ const operators = ["*","+","/","-"]
 function App() {
   const [result, setResult] = useState(0);
   const [expression, setExpression] = useState("");
-  const [decimal, setDecimal] = useState(true);
+  const [decimal, setDecimal] = useState(true); // state to handle the . key so it doesn't appear more than once
 
  const handleDisplay = (value)=>{
   if(value === "." && decimal){
     setDecimal(false);
     setExpression(prev=>prev + value);
   }
+  // if it's an operation sign 
   else if (operators.includes(value) && decimal===false) {
     setDecimal(true);
     setExpression(prev=>prev + value);
   }
-  else{
+  // if it's a number 
+  else if (!operators.includes(value) && value!=="."){
     setExpression(prev=>prev + value);
   }
-  
+
   if(expression[expression.length-1]==="="){
     if(/[1-9]/.test(value)){
       setExpression(value);
