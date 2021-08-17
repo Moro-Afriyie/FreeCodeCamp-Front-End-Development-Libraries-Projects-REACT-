@@ -1,5 +1,70 @@
 import './App.css';
 import {useState} from 'react';
+// import mexp from "math-expression-evaluator";
+
+const calculatorNumbers = [
+  {
+    id: "divide",
+    value: " / "
+  },
+  {
+    id: "multiply",
+    value: " * "
+  },
+  {
+    id: "seven",
+    value: "7"
+  },
+  {
+    id: "eight",
+    value: "8"
+  },
+  {
+    id: "nine",
+    value: "9"
+  },
+  {
+    id: "substract",
+    value: " - "
+  },
+  {
+    id: "four",
+    value: "4"
+  },
+  {
+    id: "five",
+    value: "5"
+  },
+  {
+    id: "six",
+    value: "6"
+  },
+  {
+    id: "plus",
+    value: " + "
+  },
+  {
+    id: "one",
+    value: "1"
+  },
+  {
+    id: "two",
+    value: "2"
+  },
+  {
+    id: "three",
+    value: "3"
+  },
+  {
+    id: "decimal",
+    value: "."
+  },
+  {
+    id: "zero",
+    value: "0"
+  }
+];
+
 
 function App() {
   const [result, setResult] = useState(0);
@@ -7,11 +72,29 @@ function App() {
 
  const handleDisplay = (value)=>{
   setExpression(prev=>prev + value);
+  if(expression[expression.length-1]==="="){
+    if(/[1-9]/.test(value)){
+      setExpression(value);
+    }
+    else{
+      setExpression(result + value)
+    }
+  }
  }
 
  const handleCalculate = ()=>{
-  setResult(eval(expression));
-  setExpression(prev=>prev + "=");
+   // used the math-expression-evaluator library instead of eval since eval it is unsafe
+    let result;
+    try {
+      result = mexp.eval(expression);
+    } catch (error) {
+      alert(error.message);
+      result = "NaN";
+    }
+
+    // update "result" with the result of evaluation
+    setResult(result);
+    setExpression(prev=>prev + " = ");
  }
 
  const handleAllClear = ()=>{
@@ -30,7 +113,8 @@ function App() {
         <button onClick={()=> handleDisplay("1")}>1</button>
         <button onClick={()=> handleDisplay("2")}>2</button>
         <button onClick={()=> handleDisplay("+")}>+</button>
-        <button onClick={()=> handleCalculate()}>=</button>
+        <button onClick={handleCalculate}>=</button>
+        <button onClick={()=> handleDisplay(".")}>.</button>
         <h1>{expression}</h1>
         <h2>{result}</h2>
       </div>
