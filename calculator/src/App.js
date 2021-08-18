@@ -147,6 +147,7 @@ function App() {
         <section className="button-container">
           {calculatorNumbers.map((btn)=>{
             return <button 
+            className="btn-number"
             id={btn.id}
             key={btn.id}
             value={btn.value}
@@ -159,7 +160,6 @@ function App() {
           <button onClick={()=> handleDisplay("2")}>2</button>
           <button onClick={()=> handleDisplay(" + ")}>+</button> */}
           <button onClick={handleCalculate}>=</button>
-          <button onClick={()=> handleDisplay(".")}>.</button>
           <button onClick={handleAllClear}>AC</button>
           <button onClick={handleClear}>C</button>
         </section>

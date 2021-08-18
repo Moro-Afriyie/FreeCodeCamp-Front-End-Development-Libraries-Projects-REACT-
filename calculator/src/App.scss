@@ -64,13 +64,23 @@ $boxShadowColor: #b0a1b6;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 1fr);
-        gap: 0.3rem;
+        gap: 0.5rem;
         background-color: $buttonContainerColor;
         height: 21rem;
         margin-bottom: 2rem;
         padding: 0.5rem;
         button{
-        
+            font-size: 1.2rem;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .btn-number{
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
         }
     }
     .footer{
