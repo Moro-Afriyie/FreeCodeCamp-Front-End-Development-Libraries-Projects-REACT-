@@ -135,16 +135,26 @@ function App() {
   return (
     <main className="container">
       <div className="App">
-        <button onClick={()=> handleDisplay("1")}>1</button>
-        <button onClick={()=> handleDisplay("2")}>2</button>
-        <button onClick={()=> handleDisplay(" + ")}>+</button>
-        <button onClick={handleCalculate}>=</button>
-        <button onClick={()=> handleDisplay(".")}>.</button>
-        <button onClick={handleAllClear}>AC</button>
-        <button onClick={handleClear}>C</button>
+        <section className="notch">
+          
+        </section>
+        <section className="display">
+          <h1>{expression}</h1>
+          <h2>{result}</h2>
+        </section>
+        <section className="button-container">
+          <button onClick={()=> handleDisplay("1")}>1</button>
+          <button onClick={()=> handleDisplay("2")}>2</button>
+          <button onClick={()=> handleDisplay(" + ")}>+</button>
+          <button onClick={handleCalculate}>=</button>
+          <button onClick={()=> handleDisplay(".")}>.</button>
+          <button onClick={handleAllClear}>AC</button>
+          <button onClick={handleClear}>C</button>
+        </section>
+        <footer className="footer">
+          <div className="bar"></div>
+        </footer>
 
-        <h1>{expression}</h1>
-        <h2>{result}</h2>
       </div>
     </main>
   );
