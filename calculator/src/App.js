@@ -73,31 +73,9 @@ function App() {
   const [decimal, setDecimal] = useState(true); // state to handle the . key so it doesn't appear more than once
 
  const handleDisplay = (value)=>{
-  // if(value === "." && decimal){
-  //   setDecimal(false);
-  //   setExpression(prev=>prev + value);
-  // }
-  // // if it's an operation sign 
-  // else if (operators.includes(value) && decimal===false) {
-  //   setDecimal(true);
-  //   setExpression(prev=>prev + value);
-  // }
-  // // if it's a number 
-  // else if (!operators.includes(value) && value!=="."){
-  //   setExpression(prev=>prev + value);
-  // }
-  // else if (operators.includes(value)) {
-  //   setExpression(prev=>prev + value);
-  // }
-    
-    const arrValue = expression.split(" ")[0];
-    if(arrValue===""){
-      setExpression(value);
-      return;
-    }
-    console.log("array: ",arrValue);
-    console.log("last index: " , arrValue[arrValue.length - 1]);
-    // console.log("array length: ", arrValue.length);
+   
+    // handles the decimal point
+    const arrValue = expression.split(" ");
     const lastValueHasDecimal =
       arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
       setExpression(lastValueHasDecimal
@@ -159,7 +137,7 @@ function App() {
       <div className="App">
         <button onClick={()=> handleDisplay("1")}>1</button>
         <button onClick={()=> handleDisplay("2")}>2</button>
-        <button onClick={()=> handleDisplay("+")}>+</button>
+        <button onClick={()=> handleDisplay(" + ")}>+</button>
         <button onClick={handleCalculate}>=</button>
         <button onClick={()=> handleDisplay(".")}>.</button>
         <button onClick={handleAllClear}>AC</button>
