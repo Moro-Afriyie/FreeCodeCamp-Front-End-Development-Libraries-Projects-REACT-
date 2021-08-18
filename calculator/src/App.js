@@ -65,35 +65,54 @@ const calculatorNumbers = [
   }
 ];
 
-const operators = ["*","+","/","-"]
+const operators = ["*","+","/","-"];
+
 function App() {
   const [result, setResult] = useState(0);
   const [expression, setExpression] = useState("");
   const [decimal, setDecimal] = useState(true); // state to handle the . key so it doesn't appear more than once
 
  const handleDisplay = (value)=>{
-  if(value === "." && decimal){
-    setDecimal(false);
-    setExpression(prev=>prev + value);
-  }
-  // if it's an operation sign 
-  else if (operators.includes(value) && decimal===false) {
-    setDecimal(true);
-    setExpression(prev=>prev + value);
-  }
-  // if it's a number 
-  else if (!operators.includes(value) && value!=="."){
-    setExpression(prev=>prev + value);
-  }
-
-  if(expression[expression.length-1]==="="){
-    if(/[1-9]/.test(value)){
+  // if(value === "." && decimal){
+  //   setDecimal(false);
+  //   setExpression(prev=>prev + value);
+  // }
+  // // if it's an operation sign 
+  // else if (operators.includes(value) && decimal===false) {
+  //   setDecimal(true);
+  //   setExpression(prev=>prev + value);
+  // }
+  // // if it's a number 
+  // else if (!operators.includes(value) && value!=="."){
+  //   setExpression(prev=>prev + value);
+  // }
+  // else if (operators.includes(value)) {
+  //   setExpression(prev=>prev + value);
+  // }
+    
+    const arrValue = expression.split(" ")[0];
+    if(arrValue===""){
       setExpression(value);
+      return;
     }
-    else{
-      setExpression(result + value)
-    }
-  }
+    console.log("array: ",arrValue);
+    console.log("last index: " , arrValue[arrValue.length - 1]);
+    // console.log("array length: ", arrValue.length);
+    const lastValueHasDecimal =
+      arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
+      setExpression(lastValueHasDecimal
+        ? expression
+        : expression.concat(value))
+        console.log(expression)
+     
+  // if(expression[expression.length-1]==="="){
+  //   if(/[1-9]/.test(value)){
+  //     setExpression(value);
+  //   }
+  //   else{
+  //     setExpression(result + value)
+  //   }
+  // }
   
  }
 
@@ -125,7 +144,7 @@ function App() {
     .join("")
     );
 
-    // implement the decimal logic
+    // implement the decimal
     if(expression.split("").includes(".")){
       setDecimal(false);
     }
