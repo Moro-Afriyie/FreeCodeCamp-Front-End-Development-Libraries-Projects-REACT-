@@ -145,8 +145,8 @@ function App() {
           <h2>{result}</h2>
         </section>
         <section className="button-container">
-        <button onClick={handleAllClear} id="ac">AC</button>
-          <button onClick={handleClear} id="clear">C</button>
+        <button onClick={handleAllClear} id="clear">AC</button>
+          <button onClick={handleClear} id="btn-clear">C</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"

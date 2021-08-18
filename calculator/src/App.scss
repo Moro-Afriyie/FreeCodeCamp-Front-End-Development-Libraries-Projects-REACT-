@@ -9,7 +9,7 @@ $operationsColor: #ffd8ff;
 $equalColor1: #fe816e;
 $equalColor2: #ff34af;
 $buttonTextColor: #5f49cd;
-$clearColor: #818181; 
+$btn-clearColor: #818181; 
 $boxShadowColor: #b0a1b6;
 
 *{
@@ -52,7 +52,6 @@ $boxShadowColor: #b0a1b6;
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-end;
-        // border: 1px solid blue;
         background-color: $displayColor;
         height: 12rem;
         border-top-left-radius: 1.1rem;
@@ -60,7 +59,6 @@ $boxShadowColor: #b0a1b6;
         border-top-right-radius: 1.2rem;
     }
     .button-container{
-        // border: 1px solid green;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 1fr);
@@ -83,18 +81,18 @@ $boxShadowColor: #b0a1b6;
         .btn-number{
             color: $buttonTextColor;
         }
-        #ac,#zero{
+        #clear,#zero{
             grid-column: 1/ span 2;
         }
-        #zero,#ac{
+        #zero,#clear{
             border-radius: 40px;
             width: auto;
             
         }
-        #ac,#clear{
-            color: $clearColor;
+        #clear,#btn-clear{
+            color: $btn-clearColor;
         }
-        #divide,#multiply,#divide,#subtract,#add{
+        #divide,#multiply,#divide,#subtrcleart,#add{
             color: $equalColor2;
             font-size: 1.8rem;
         }
