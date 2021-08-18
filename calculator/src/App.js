@@ -65,7 +65,7 @@ const calculatorNumbers = [
   },
 ];
 
-const operators = ["*","+","/","-"];
+// const operators = ["*","+","/","-"];
 
 function App() {
   const [result, setResult] = useState(0);
@@ -142,8 +142,8 @@ function App() {
         </section>
         <section  className="display">
           <div id="display">
-            <h1>{expression}</h1>
-            <h2>{result}</h2>
+            <h3>{expression}</h3>
+            <h1>{result}</h1>
           </div>
         </section>
         {/* ± % ÷ × − + = */}
