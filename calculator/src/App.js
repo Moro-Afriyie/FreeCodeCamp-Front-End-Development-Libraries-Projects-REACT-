@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {useState} from 'react';
 import mexp from "math-expression-evaluator";
 
@@ -133,7 +133,7 @@ function App() {
     setResult(0);
  }
   return (
-    <main>
+    <main className="container">
       <div className="App">
         <button onClick={()=> handleDisplay("1")}>1</button>
         <button onClick={()=> handleDisplay("2")}>2</button>
