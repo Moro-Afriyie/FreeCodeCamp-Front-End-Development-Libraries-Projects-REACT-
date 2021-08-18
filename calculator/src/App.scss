@@ -84,15 +84,20 @@ $boxShadowColor: #b0a1b6;
         .btn-number{
             color: $buttonTextColor;
         }
-        #clear,#zero{
+        // #clear,#zero{
+        //     grid-column: 1/ span 2;
+        // }
+        // #zero,#clear{
+        //     border-radius: 40px;
+        //     width: auto;
+            
+        // }
+        #zero{
             grid-column: 1/ span 2;
-        }
-        #zero,#clear{
             border-radius: 40px;
             width: auto;
-            
         }
-        #clear,#btn-clear{
+        #clear,#btn-clear,#toggle{
             color: $btn-clearColor;
         }
         #divide,#multiply,#divide,#subtract,#add{
