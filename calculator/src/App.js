@@ -97,6 +97,10 @@ function App() {
  }
 
  const handleCalculate = ()=>{
+   if(expression===""){
+     return;
+   }
+
    // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
