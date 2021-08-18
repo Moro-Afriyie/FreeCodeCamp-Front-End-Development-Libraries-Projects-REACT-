@@ -73,7 +73,7 @@ function App() {
   const [decimal, setDecimal] = useState(true); // state to handle the . key so it doesn't appear more than once
 
  const handleDisplay = (value)=>{
-   
+
     // handles the decimal point
     const arrValue = expression.split(" ");
     const lastValueHasDecimal =
@@ -83,14 +83,14 @@ function App() {
         : expression.concat(value))
         console.log(expression)
      
-  // if(expression[expression.length-1]==="="){
-  //   if(/[1-9]/.test(value)){
-  //     setExpression(value);
-  //   }
-  //   else{
-  //     setExpression(result + value)
-  //   }
-  // }
+  if(expression.includes("=")){
+    if(/[1-9]/.test(value)){
+      setExpression(value);
+    }
+    else{
+      setExpression(result + value)
+    }
+  }
   
  }
 
@@ -106,7 +106,7 @@ function App() {
 
     // update "result" with the result of evaluation
     setResult(result);
-    setExpression(prev=>prev + " = ");
+    setExpression(prev=>prev + " = " + result);
  }
 
  const handleAllClear = ()=>{
