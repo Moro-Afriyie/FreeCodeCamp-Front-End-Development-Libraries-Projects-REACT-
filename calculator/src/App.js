@@ -72,7 +72,6 @@ function App() {
   const [expression, setExpression] = useState("");
 
  const handleDisplay = (value)=>{
-
     // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
@@ -104,7 +103,7 @@ function App() {
    // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
-      result = mexp.eval(expression).toFixed(2);
+      result = mexp.eval(expression).toFixed(2); // set the results to 2 decimal places
     } catch (error) {
       alert(error.message);
       result = "NaN";
@@ -127,7 +126,6 @@ function App() {
     .slice(0, -1)
     .join("")
     );
-    // setDecimal(false);  
     setResult(0);
  }
   return (
