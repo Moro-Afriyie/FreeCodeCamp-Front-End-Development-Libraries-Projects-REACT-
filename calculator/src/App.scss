@@ -17,9 +17,15 @@ $clearColor: #818181;
     box-sizing: border-box;
     background-color:$backgroundColor;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .App{
-    width: 200px;
-    height: 80vh;
-    border: 1px solid $borderColor;
+    width: 24rem;
+    height: 85vh;
+    border: 8px solid $borderColor;
 }
