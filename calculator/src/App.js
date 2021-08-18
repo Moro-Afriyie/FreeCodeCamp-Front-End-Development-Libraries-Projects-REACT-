@@ -100,7 +100,7 @@ function App() {
    // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
-      result = mexp.eval(expression);
+      result = mexp.eval(expression).toFixed(2);
     } catch (error) {
       alert(error.message);
       result = "NaN";
