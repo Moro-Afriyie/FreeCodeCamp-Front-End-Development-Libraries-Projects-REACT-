@@ -52,15 +52,15 @@ $boxShadowColor: #b0a1b6;
         flex-direction: column;
         align-items: flex-end;
         justify-content: flex-end;
-        border: 1px solid blue;
+        // border: 1px solid blue;
         background-color: $displayColor;
         height: 12rem;
         border-top-left-radius: 1.1rem;
-        padding: 0rem 1rem;
+        padding: 0rem 1rem 1rem 1rem;
         border-top-right-radius: 1.2rem;
     }
     .button-container{
-        border: 1px solid green;
+        // border: 1px solid green;
         background-color: $buttonContainerColor;
         height: 21rem;
         margin-bottom: 2rem;
