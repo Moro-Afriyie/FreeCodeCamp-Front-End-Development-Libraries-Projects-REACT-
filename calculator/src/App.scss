@@ -1,10 +1,25 @@
 /****VARIABLES****/
 $backgroundColor: #f0f5f1;
-// $borderColor: #
+$borderColor: #3c4552;
+$displayColor: #f3f3f3;
+$expressionColor: #fdd9f1;
+$buttonContainerColor: #ffffff;
+$buttonColor: #f7f7f7;
+$operationsColor: #ffd8ff;
+$equalColor1: #fe816e;
+$equalColor2: #ff34af;
+$buttonTextColor: #5f49cd;
+$clearColor: #818181; 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color:$backgroundColor;
+}
+
+.App{
+    width: 200px;
+    height: 80vh;
+    border: 1px solid $borderColor;
 }
