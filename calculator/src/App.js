@@ -36,7 +36,7 @@ const calculatorNumbers = [
     value: "6"
   },
   {
-    id: "substract",
+    id: "subtract",
     value: " - "
   },
   {
@@ -52,7 +52,7 @@ const calculatorNumbers = [
     value: "3"
   },
   {
-    id: "plus",
+    id: "add",
     value: " + "
   },
   {
