@@ -58,6 +58,9 @@ $boxShadowColor: #b0a1b6;
         padding: 0rem 1rem 1rem 1rem;
         border-top-right-radius: 1.2rem;
     }
+    #display{
+        text-align: right;
+    }
     .button-container{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -92,7 +95,7 @@ $boxShadowColor: #b0a1b6;
         #clear,#btn-clear{
             color: $btn-clearColor;
         }
-        #divide,#multiply,#divide,#subtrcleart,#add{
+        #divide,#multiply,#divide,#subtract,#add{
             color: $equalColor2;
             font-size: 1.8rem;
         }

@@ -140,9 +140,11 @@ function App() {
         <section className="notch">
 
         </section>
-        <section className="display">
-          <h1>{expression}</h1>
-          <h2>{result}</h2>
+        <section  className="display">
+          <div id="display">
+            <h1>{expression}</h1>
+            <h2>{result}</h2>
+          </div>
         </section>
         <section className="button-container">
         <button onClick={handleAllClear} id="clear">AC</button>
@@ -159,7 +161,6 @@ function App() {
              </button>
           })}
           <button onClick={handleCalculate} id="equals">=</button>
-          
         </section>
         <footer className="footer">
           <div className="bar"></div>
