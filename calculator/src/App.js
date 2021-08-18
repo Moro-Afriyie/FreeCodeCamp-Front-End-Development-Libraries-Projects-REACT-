@@ -103,7 +103,11 @@ function App() {
    // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
-      result = mexp.eval(expression).toFixed(2); // set the results to 2 decimal places
+      result = mexp.eval(expression); 
+      // set the results to 2 decimal places if it contains a decimal point
+      if(result.toString().includes(".")){
+        result = result.toFixed(2);
+      }
     } catch (error) {
       alert(error.message);
       result = "NaN";
