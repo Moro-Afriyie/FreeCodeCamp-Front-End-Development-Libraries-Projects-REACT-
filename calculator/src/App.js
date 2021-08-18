@@ -75,22 +75,25 @@ function App() {
  const handleDisplay = (value)=>{
 
     // handles the decimal point
+    // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
+    // 2. check if the last element in the array has a decimal value
     const lastValueHasDecimal =
       arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
+    // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
         ? expression
         : expression.concat(value))
-        console.log(expression)
      
-  if(expression.includes("=")){
-    if(/[1-9]/.test(value)){
-      setExpression(value);
+    // makes sure to append a number after the equal to sign so we can continue with the calculation
+    if(expression.includes("=")){
+      if(/[1-9]/.test(value)){
+        setExpression(value);
+      }
+      else{
+        setExpression(result + value)
+      }
     }
-    else{
-      setExpression(result + value)
-    }
-  }
   
  }
 
