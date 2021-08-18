@@ -66,22 +66,52 @@ $boxShadowColor: #b0a1b6;
         grid-template-rows: repeat(5, 1fr);
         gap: 0.5rem;
         background-color: $buttonContainerColor;
-        height: 21rem;
-        margin-bottom: 2rem;
-        padding: 0.5rem;
+        height: 22rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem;
         button{
             font-size: 1.2rem;
             border: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
            
         }
         .btn-number{
-            width: 62px;
-            height: 62px;
-            border-radius: 50%;
+            color: $buttonTextColor;
         }
+        #ac,#zero{
+            grid-column: 1/ span 2;
+        }
+        #zero,#ac{
+            border-radius: 40px;
+            width: auto;
+            
+        }
+        #ac,#clear{
+            color: $clearColor;
+        }
+        #divide,#multiply,#divide,#substract,#plus{
+            color: $equalColor2;
+            font-size: 1.8rem;
+        }
+        #multiply{
+            padding-top: 1rem;
+        }
+        #decimal{
+            font-size: 2.6rem;
+            padding-bottom: 1.5rem;
+        }
+
+        #equal{
+            background: linear-gradient(0deg,$equalColor2,$equalColor1);
+            color: #ffffff;
+        }
+
+      
     }
     .footer{
         display: flex;

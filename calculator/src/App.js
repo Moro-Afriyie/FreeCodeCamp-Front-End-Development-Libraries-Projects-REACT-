@@ -8,10 +8,6 @@ const calculatorNumbers = [
     value: " / "
   },
   {
-    id: "multiply",
-    value: " * "
-  },
-  {
     id: "seven",
     value: "7"
   },
@@ -24,8 +20,8 @@ const calculatorNumbers = [
     value: "9"
   },
   {
-    id: "substract",
-    value: " - "
+    id: "multiply",
+    value: " * "
   },
   {
     id: "four",
@@ -40,8 +36,8 @@ const calculatorNumbers = [
     value: "6"
   },
   {
-    id: "plus",
-    value: " + "
+    id: "substract",
+    value: " - "
   },
   {
     id: "one",
@@ -56,13 +52,17 @@ const calculatorNumbers = [
     value: "3"
   },
   {
-    id: "decimal",
-    value: "."
+    id: "plus",
+    value: " + "
   },
   {
     id: "zero",
     value: "0"
-  }
+  },
+  {
+    id: "decimal",
+    value: "."
+  },
 ];
 
 const operators = ["*","+","/","-"];
@@ -145,6 +145,8 @@ function App() {
           <h2>{result}</h2>
         </section>
         <section className="button-container">
+        <button onClick={handleAllClear} id="ac">AC</button>
+          <button onClick={handleClear} id="clear">C</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
@@ -159,9 +161,8 @@ function App() {
           {/* <button onClick={()=> handleDisplay("1")}>1</button>
           <button onClick={()=> handleDisplay("2")}>2</button>
           <button onClick={()=> handleDisplay(" + ")}>+</button> */}
-          <button onClick={handleCalculate}>=</button>
-          <button onClick={handleAllClear}>AC</button>
-          <button onClick={handleClear}>C</button>
+          <button onClick={handleCalculate} id="equal">=</button>
+          
         </section>
         <footer className="footer">
           <div className="bar"></div>
