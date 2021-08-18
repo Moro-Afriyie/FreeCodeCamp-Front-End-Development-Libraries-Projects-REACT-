@@ -136,11 +136,14 @@ function App() {
     <main className="container">
       <div className="App">
         <section className="notch">
-          
+
         </section>
         <section className="display">
-          <h1>{expression}</h1>
-          <h2>{result}</h2>
+          {/* <h1>{expression}</h1>
+          <h2>{result}</h2> */}
+          
+          <h1>200</h1>
+          <h2>300</h2>
         </section>
         <section className="button-container">
           <button onClick={()=> handleDisplay("1")}>1</button>

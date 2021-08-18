@@ -33,16 +33,46 @@ $boxShadowColor: #b0a1b6;
     box-shadow: 0px 28px 95px 3px $boxShadowColor;
     -webkit-box-shadow: 0px 28px 95px 3px $boxShadowColor;
     -moz-box-shadow: 0px 28px 95px 3px $boxShadowColor;
+    position: relative;
+    background-color: $buttonContainerColor;
     .notch{
-        border: 1px solid red;
+        position: absolute;
+        background-color: $borderColor;
+        padding: 0rem;
+        top: 0;
+        left: 16%;
+        height: 20px;
+        width: 67%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
     }
     .display{
         border: 1px solid blue;
+        // margin-top: 3rem;
+        background-color: $displayColor;
+        height: 10rem;
+        border-top-left-radius: 1.1rem;
+        padding: 0rem 1rem;
+        border-top-right-radius: 1.2rem;
     }
     .button-container{
         border: 1px solid green;
+        background-color: $buttonContainerColor;
+        height: 23rem;
+    margin-bottom: 2rem;
     }
     .footer{
-        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        background-color: $buttonContainerColor;
+        justify-content: center;
+        margin: 2px 3rem;
+        .bar{
+            width: 133px;
+            height: 5px;
+            background-color: #000000;
+            border-radius: 2px;
+        }
     }
 }
