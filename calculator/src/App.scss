@@ -61,10 +61,17 @@ $boxShadowColor: #b0a1b6;
     }
     .button-container{
         // border: 1px solid green;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 0.3rem;
         background-color: $buttonContainerColor;
         height: 21rem;
         margin-bottom: 2rem;
         padding: 0.5rem;
+        button{
+        
+        }
     }
     .footer{
         display: flex;

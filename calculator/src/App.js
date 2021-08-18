@@ -87,9 +87,11 @@ function App() {
     if(expression.includes("=")){
       if(/[1-9]/.test(value)){
         setExpression(value);
+        setResult(0);
       }
       else{
-        setExpression(result + value)
+        setExpression(result + value);
+        setResult(0);
       }
     }
   
@@ -139,16 +141,23 @@ function App() {
 
         </section>
         <section className="display">
-          {/* <h1>{expression}</h1>
-          <h2>{result}</h2> */}
-          
-          <h1>200</h1>
-          <h2>300</h2>
+          <h1>{expression}</h1>
+          <h2>{result}</h2>
         </section>
         <section className="button-container">
-          <button onClick={()=> handleDisplay("1")}>1</button>
+          {calculatorNumbers.map((btn)=>{
+            return <button 
+            id={btn.id}
+            key={btn.id}
+            value={btn.value}
+             onClick={()=> handleDisplay(btn.value)}
+             >
+               {btn.value}
+             </button>
+          })}
+          {/* <button onClick={()=> handleDisplay("1")}>1</button>
           <button onClick={()=> handleDisplay("2")}>2</button>
-          <button onClick={()=> handleDisplay(" + ")}>+</button>
+          <button onClick={()=> handleDisplay(" + ")}>+</button> */}
           <button onClick={handleCalculate}>=</button>
           <button onClick={()=> handleDisplay(".")}>.</button>
           <button onClick={handleAllClear}>AC</button>
