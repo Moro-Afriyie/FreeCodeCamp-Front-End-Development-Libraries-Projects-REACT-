@@ -70,7 +70,6 @@ const operators = ["*","+","/","-"];
 function App() {
   const [result, setResult] = useState(0);
   const [expression, setExpression] = useState("");
-  const [decimal, setDecimal] = useState(true); // state to handle the . key so it doesn't appear more than once
 
  const handleDisplay = (value)=>{
 
@@ -109,13 +108,13 @@ function App() {
 
     // update "result" with the result of evaluation
     setResult(result);
-    setExpression(prev=>prev + " = " + result);
+    setExpression(prev=>`${prev}  = ${result}`);
  }
 
  const handleAllClear = ()=>{
    setExpression("");
    setResult(0);
-   setDecimal(true);
+  
  }
 
  const handleClear =()=>{
@@ -124,14 +123,6 @@ function App() {
     .slice(0, -1)
     .join("")
     );
-
-    // implement the decimal
-    if(expression.split("").includes(".")){
-      setDecimal(false);
-    }
-    else{
-      setDecimal(true);
-    }
     // setDecimal(false);  
     setResult(0);
  }
