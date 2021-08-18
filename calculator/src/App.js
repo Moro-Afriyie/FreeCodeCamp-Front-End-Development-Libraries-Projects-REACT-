@@ -158,10 +158,7 @@ function App() {
                {btn.value}
              </button>
           })}
-          {/* <button onClick={()=> handleDisplay("1")}>1</button>
-          <button onClick={()=> handleDisplay("2")}>2</button>
-          <button onClick={()=> handleDisplay(" + ")}>+</button> */}
-          <button onClick={handleCalculate} id="equal">=</button>
+          <button onClick={handleCalculate} id="equals">=</button>
           
         </section>
         <footer className="footer">
