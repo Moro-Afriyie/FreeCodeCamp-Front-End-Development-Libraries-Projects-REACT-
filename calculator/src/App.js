@@ -82,11 +82,11 @@ function App() {
     //   return;
     // }
 
-    // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
     // console.log("array value: ", arrValue[arrValue.length-1])
     let lastValueHasDecimal = false;
+      // handles the decimal point
      // 2. check if the last element in the array has a decimal value
     if(arrValue[arrValue.length - 1].indexOf(".") > -1 && value === "."){
       lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
