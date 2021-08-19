@@ -77,15 +77,15 @@ function App() {
       setExpression("0");
       return;
     }
-    if(value === " ± " && expression.length < 2){
-      setExpression("-");
-      return;
-    }
+    // if(value === " ± " && expression.length < 2){
+    //   setExpression("-");
+    //   return;
+    // }
 
     // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
-    console.log("array value: ", arrValue[arrValue.length-1])
+    // console.log("array value: ", arrValue[arrValue.length-1])
     let lastValueHasDecimal = false;
      // 2. check if the last element in the array has a decimal value
     if(arrValue[arrValue.length - 1].indexOf(".") > -1 && value === "."){
@@ -93,7 +93,7 @@ function App() {
     }
     // checks if the value is already starting with a zero
     else if(arrValue[arrValue.length-1].length > 0 && value==="0"){
-      console.log("first number: ", arrValue[arrValue.length-1][0])
+      // console.log("first number: ", arrValue[arrValue.length-1][0])
       if(arrValue[arrValue.length-1][0] ==="0" && value==="0"){
         lastValueHasDecimal = true;
       }
@@ -111,7 +111,7 @@ function App() {
     //   }
     
     // }
-    console.log("value : ", value);
+    // console.log("value : ", value);
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
         ? expression
@@ -136,10 +136,12 @@ function App() {
      return;
    }
 
-   // used the math-expression-evaluator library instead of eval since eval is unsafe
+   // remove consecutive operators excluding negative
+   const filteredExpression = expression.match(/(\s\*\s|\s\+\s|\/|\s\-\s)?(\.|\s\-\s)?\d+/g).join('');
+  // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
-      result = mexp.eval(expression); 
+      result = mexp.eval(filteredExpression); 
       // set the results to 2 decimal places if it contains a decimal point
       if(result.toString().includes(".")){
         result = result.toFixed(4);
@@ -185,7 +187,7 @@ function App() {
         <button onClick={handleAllClear} id="clear">AC</button>
           <button onClick={handleClear} id="btn-clear">C</button>
           {/* <button onClick={()=>handleDisplay("±")} id="toggle">±</button> */}
-           <button  id="toggle" onClick={()=> handleDisplay(" ± ")}>±</button>
+           <button  id="toggle">±</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
