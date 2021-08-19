@@ -65,7 +65,7 @@ const calculatorNumbers = [
   },
 ];
 
-// const operators = ["*","+","/","-"];
+const operators = [" * "," + "," / "];
 
 function App() {
   const [result, setResult] = useState(0);
@@ -77,10 +77,9 @@ function App() {
       setExpression("0");
       return;
     }
-    // if(value === " ± " && expression.length < 2){
-    //   setExpression("-");
-    //   return;
-    // }
+    else if(operators.includes(value) && expression.length<2){
+      return;
+    }
 
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
@@ -98,25 +97,13 @@ function App() {
         lastValueHasDecimal = true;
       }
     }
-    // else if(value === " ± "){
-    //   if((arrValue[arrValue.length-1])>0){
-    //     value = (parseFloat(arrValue[arrValue.length-1])*-1).toString();
-    //     console.log("plus-minus: ", value);
-    //     lastValueHasDecimal = false;
-    //   }
-    //   else {
-    //     value = "-"
-    //     console.log("plus minus key pressed");
-    //     lastValueHasDecimal = true;
-    //   }
-    
-    // }
-    // console.log("value : ", value);
+  
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
-        ? expression
-        : expression.concat(value))
+        ? expression.replace(/\s+/g, '').trim()
+        : expression.concat(value).replace(/\s+/g, '').trim())
      
+      
     // makes sure to append a number after the equal to sign so we can continue with the calculation
     if(expression.includes("=")){
       if(/[1-9]/.test(value)){
@@ -135,9 +122,7 @@ function App() {
    if(expression===""){
      return;
    }
-
-   // remove consecutive operators excluding negative
-   const filteredExpression = expression.match(/(\s\*\s|\s\+\s|\/|\s\-\s)?(\.|\s\-\s)?\d+/g).join('');
+  const filteredExpression = expression.match(/(\*|\+|\/|\-)?(\.|\-)?\d+/g).join('');
   // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
