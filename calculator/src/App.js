@@ -72,6 +72,12 @@ function App() {
   const [expression, setExpression] = useState("");
 
  const handleDisplay = (value)=>{
+   // handle multiple zeros
+    if (value === "0" && expression.length < 2){
+      setExpression("0");
+      return;
+    }
+
     // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
@@ -108,7 +114,7 @@ function App() {
       result = mexp.eval(expression); 
       // set the results to 2 decimal places if it contains a decimal point
       if(result.toString().includes(".")){
-        result = result.toFixed(2);
+        result = result.toFixed(4);
       }
     } catch (error) {
       alert(error.message);

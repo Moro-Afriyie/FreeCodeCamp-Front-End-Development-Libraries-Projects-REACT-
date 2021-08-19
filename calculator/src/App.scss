@@ -59,6 +59,8 @@ $boxShadowColor: #b0a1b6;
         border-top-right-radius: 1.2rem;
         h3{
             color: $equalColor2;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
         h1{
         font-size: 3rem;
@@ -67,6 +69,8 @@ $boxShadowColor: #b0a1b6;
 
     #display{
         text-align: right;
+        width: 270px;
+        
     }
     .button-container{
         display: grid;
