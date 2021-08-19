@@ -81,9 +81,23 @@ function App() {
     // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
-    // 2. check if the last element in the array has a decimal value
-    const lastValueHasDecimal =
-      arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
+    console.log("array value: ", arrValue[arrValue.length-1])
+    let lastValueHasDecimal = false;
+     // 2. check if the last element in the array has a decimal value
+    if(arrValue[arrValue.length - 1].indexOf(".") > -1 && value === "."){
+      lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
+    }
+    // checks if the value is already starting with a zero
+    else if(arrValue[arrValue.length-1].length > 0 && value==="0"){
+      console.log("first number: ", arrValue[arrValue.length-1][0])
+      if(arrValue[arrValue.length-1][0] ==="0" && value==="0"){
+        lastValueHasDecimal = true;
+      }
+    }
+    else if(value==="±"){
+      value = arrValue[arrValue.length-1]*-1;
+      lastValueHasDecimal = false;
+    }
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
         ? expression
@@ -157,7 +171,7 @@ function App() {
         <button onClick={handleAllClear} id="clear">AC</button>
           <button onClick={handleClear} id="btn-clear">C</button>
           {/* <button onClick={()=>handleDisplay("±")} id="toggle">±</button> */}
-           <button  id="toggle">±</button>
+           <button  id="toggle" onClick={()=> handleDisplay("±")}>±</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
