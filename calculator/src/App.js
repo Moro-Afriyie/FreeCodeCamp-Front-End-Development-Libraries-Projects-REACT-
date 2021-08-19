@@ -73,11 +73,11 @@ function App() {
 
  const handleDisplay = (value)=>{
    // handle multiple zeros
-    if (value === "0" && expression.length < 2){
+    if (value === "0" && expression.length < 1){
       setExpression("0");
       return;
     }
-    else if(operators.includes(value) && expression.length<2){
+    else if(operators.includes(value) && expression===""){
       return;
     }
 
@@ -93,7 +93,7 @@ function App() {
     // checks if the value is already starting with a zero
     else if(arrValue[arrValue.length-1].length > 0 && value==="0"){
       // console.log("first number: ", arrValue[arrValue.length-1][0])
-      if(arrValue[arrValue.length-1][0] ==="0" && value==="0"){
+      if(arrValue[arrValue.length-1][0] ==="0"){
         lastValueHasDecimal = true;
       }
     }
@@ -122,7 +122,7 @@ function App() {
    if(expression===""){
      return;
    }
-  const filteredExpression = expression.match(/(\*|\+|\/|\-)?(\.|\-)?\d+/g).join('');
+  const filteredExpression = expression.match(/(\*|\+|\/|-)?(\.|-)?\d+/g).join('');
   // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
