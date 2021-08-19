@@ -77,6 +77,10 @@ function App() {
       setExpression("0");
       return;
     }
+    if(value === " ± " && expression.length < 2){
+      setExpression("-");
+      return;
+    }
 
     // handles the decimal point
     // 1. split the expression since operators have spaces around them to make it easier
@@ -94,10 +98,20 @@ function App() {
         lastValueHasDecimal = true;
       }
     }
-    else if(value==="±"){
-      value = arrValue[arrValue.length-1]*-1;
-      lastValueHasDecimal = false;
-    }
+    // else if(value === " ± "){
+    //   if((arrValue[arrValue.length-1])>0){
+    //     value = (parseFloat(arrValue[arrValue.length-1])*-1).toString();
+    //     console.log("plus-minus: ", value);
+    //     lastValueHasDecimal = false;
+    //   }
+    //   else {
+    //     value = "-"
+    //     console.log("plus minus key pressed");
+    //     lastValueHasDecimal = true;
+    //   }
+    
+    // }
+    console.log("value : ", value);
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
         ? expression
@@ -171,7 +185,7 @@ function App() {
         <button onClick={handleAllClear} id="clear">AC</button>
           <button onClick={handleClear} id="btn-clear">C</button>
           {/* <button onClick={()=>handleDisplay("±")} id="toggle">±</button> */}
-           <button  id="toggle" onClick={()=> handleDisplay("±")}>±</button>
+           <button  id="toggle" onClick={()=> handleDisplay(" ± ")}>±</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
