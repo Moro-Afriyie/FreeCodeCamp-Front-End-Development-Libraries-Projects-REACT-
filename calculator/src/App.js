@@ -148,7 +148,8 @@ function App() {
       }
     } catch (error) {
       alert(error.message);
-      result = "NaN";
+      result = "Error";
+      setExpression("");
     }
 
     // update "result" with the result of evaluation
