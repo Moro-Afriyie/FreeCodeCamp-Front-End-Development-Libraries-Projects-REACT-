@@ -70,48 +70,59 @@ const operators = [" * "," + "," / "];
 function App() {
   const [result, setResult] = useState(0);
   const [expression, setExpression] = useState("");
+  const [currentValue, setCurrentValue] = useState("");
 
  const handleDisplay = (value)=>{
-   console.log(value);
-   console.log(expression.length);
-   console.log("expression logic: ", value === "0" && expression.length < 1)
    // handle multiple zeros
     if (value === "0" && expression.length < 2){
       setExpression("0");
-      console.log("zero");
+      setCurrentValue("0");
       return;
     }
     else if(operators.includes(value) && expression===""){
       return;
     }
+    // handles the decimal point
     else if (value===".") {
       // 1. split the expression since operators have spaces around them to make it easier
-    const arrValue = expression.split(" ");
+    const arrValue = currentValue.split(" ");
     console.log("array value: ", arrValue[arrValue.length-1])
-      // handles the decimal point
      // 2. check if the last element in the array has a decimal value
      const lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
     console.log("decimal: ", lastValueHasDecimal);
-    
-  
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
-      setExpression(lastValueHasDecimal
-        ? expression.trim()
-        : expression.concat(value).trim())
+      setCurrentValue(lastValueHasDecimal
+        ? currentValue
+        : currentValue.concat(value))
+          setExpression(lastValueHasDecimal
+        ? expression
+        : expression.concat(value))
         return;
     }
-    
+    if(operators.includes(currentValue) && !operators.includes(value)){
+      setCurrentValue(currentValue.replace(currentValue,value));
+      setExpression(expression.concat(value));
+      return
+    }
+    if(operators.includes(value)){
+      setCurrentValue(value);
+    } else{
+      setCurrentValue(currentValue.concat(value));
+    }
+   
     setExpression(expression.concat(value));
       
     // makes sure to append a number after the equal to sign so we can continue with the calculation
     if(expression.includes("=")){
-      if(/[1-9]/.test(value)){
+      if(/[0-9]/.test(value)){
         setExpression(value);
         setResult(0);
+        setCurrentValue(value);
       }
       else{
         setExpression(result + value);
         setResult(0);
+        setCurrentValue(value);
       }
     }
   
@@ -137,6 +148,7 @@ function App() {
     }
 
     // update "result" with the result of evaluation
+    setCurrentValue("");
     setResult(result);
     setExpression(prev=>`${prev}  = ${result}`);
  }
@@ -162,9 +174,9 @@ function App() {
 
         </section>
         <section  className="display">
-          <div id="display">
+          <div id="display2">
             <h3>{expression}</h3>
-            <h1>{result}</h1>
+            <h1 id="display2">{currentValue ===""? result:currentValue}</h1>
           </div>
         </section>
         {/* ± % ÷ × − + = */}
