@@ -74,22 +74,20 @@ function App() {
 
  const handleDisplay = (value)=>{
    // handle multiple zeros
-    if (value === "0" && expression.length < 2){
-      setExpression("0");
-      setCurrentValue("0");
-      return;
-    }
-    else if(operators.includes(value) && expression===""){
+    // if (value === "0" && expression.length < 2){
+    //   setExpression("0");
+    //   setCurrentValue("0");
+    //   return;
+    // }
+    if(operators.includes(value) && expression===""){
       return;
     }
     // handles the decimal point
     else if (value===".") {
       // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = currentValue.split(" ");
-    console.log("array value: ", arrValue[arrValue.length-1])
      // 2. check if the last element in the array has a decimal value
      const lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
-    console.log("decimal: ", lastValueHasDecimal);
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setCurrentValue(lastValueHasDecimal
         ? currentValue
@@ -137,8 +135,9 @@ function App() {
     let result;
     try {
       result = mexp.eval(filteredExpression); 
-      // set the results to 2 decimal places if it contains a decimal point
+      // set the results to 4 decimal places if it contains a decimal point
       if(result.toString().includes(".")){
+        if(result.toString().split(".")[1].length>4)
         result = result.toFixed(4);
       }
     } catch (error) {
@@ -156,6 +155,7 @@ function App() {
  const handleAllClear = ()=>{
    setExpression("");
    setResult(0);
+   setCurrentValue("");
   
  }
 
@@ -176,7 +176,7 @@ function App() {
         <section  className="display">
           <div id="display2">
             <h3>{expression}</h3>
-            <h1 id="display2">{currentValue ===""? result:currentValue}</h1>
+            <h1 id="display">{currentValue ===""? result:currentValue}</h1>
           </div>
         </section>
         {/* ± % ÷ × − + = */}
