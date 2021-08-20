@@ -73,12 +73,6 @@ function App() {
   const [currentValue, setCurrentValue] = useState("");
 
  const handleDisplay = (value)=>{
-   // handle multiple zeros
-    // if (value === "0" && expression.length < 2){
-    //   setExpression("0");
-    //   setCurrentValue("0");
-    //   return;
-    // }
     if(operators.includes(value) && expression===""){
       return;
     }
