@@ -196,8 +196,8 @@ function App() {
         <section className="button-container">
         <button onClick={handleAllClear} id="clear">AC</button>
           <button onClick={handleClear} id="btn-clear">C</button>
-          <button onClick={()=>handleDisplay("%")} id="toggle">%</button>
-           {/* <button  id="toggle">±</button> */}
+          {/* <button onClick={()=>handleDisplay("%")} id="toggle">%</button> */}
+           <button  id="toggle">±</button>
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
