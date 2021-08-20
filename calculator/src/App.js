@@ -166,6 +166,12 @@ function App() {
     .join("")
     );
     setResult(0);
+    setCurrentValue(prev=>
+      prev.split("")
+      .slice(0, -1)
+      .join("")
+      );
+      setResult(0);
  }
   return (
     <main className="container">
