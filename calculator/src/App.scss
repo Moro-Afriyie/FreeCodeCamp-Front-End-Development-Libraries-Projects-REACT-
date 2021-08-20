@@ -70,8 +70,16 @@ $boxShadowColor: #b0a1b6;
     }
 
     #display2{
+        flex-direction: column;
         text-align: right;
-        width: 240px;   
+        width: 240px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        height: 125px;
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+        overflow: auto;
     }
     .button-container{
         display: grid;
