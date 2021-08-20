@@ -28,8 +28,8 @@ $boxShadowColor: #b0a1b6;
 }
 
 .App{
-    width: 20rem;
-    height: 90vh;
+    width: 18rem;
+    height: 34rem;
     border: 10px solid #3c4552;
     border-radius: 2.1rem;
     box-shadow: 0px 28px 95px 3px $boxShadowColor;
@@ -55,7 +55,7 @@ $boxShadowColor: #b0a1b6;
         align-items: flex-end;
         justify-content: flex-end;
         background-color: $displayColor;
-        height: 12rem;
+        height: 11rem;
         border-top-left-radius: 1.1rem;
         padding: 0rem 1rem 1rem 1rem;
         border-top-right-radius: 1.2rem;
@@ -65,14 +65,13 @@ $boxShadowColor: #b0a1b6;
             word-wrap: break-word;
         }
         h1{
-        font-size: 2.3rem;
+        font-size: 2rem;
         }
     }
 
     #display{
         text-align: right;
-        width: 270px;
-        
+        width: 240px;   
     }
     .button-container{
         display: grid;
@@ -80,8 +79,8 @@ $boxShadowColor: #b0a1b6;
         grid-template-rows: repeat(5, 1fr);
         gap: 0.5rem;
         background-color: $buttonContainerColor;
-        height: 22rem;
-        margin-bottom: 1rem;
+        height: 18rem;
+        margin-bottom: 3rem;
         padding: 0.5rem 1rem;
         button{
             font-size: 1.2rem;
@@ -97,14 +96,6 @@ $boxShadowColor: #b0a1b6;
         .btn-number{
             color: $buttonTextColor;
         }
-        // #clear,#zero{
-        //     grid-column: 1/ span 2;
-        // }
-        // #zero,#clear{
-        //     border-radius: 40px;
-        //     width: auto;
-            
-        // }
         #zero{
             grid-column: 1/ span 2;
             border-radius: 40px;

@@ -72,37 +72,36 @@ function App() {
   const [expression, setExpression] = useState("");
 
  const handleDisplay = (value)=>{
+   console.log(value);
+   console.log(expression.length);
+   console.log("expression logic: ", value === "0" && expression.length < 1)
    // handle multiple zeros
-    if (value === "0" && expression.length < 1){
+    if (value === "0" && expression.length < 2){
       setExpression("0");
+      console.log("zero");
       return;
     }
     else if(operators.includes(value) && expression===""){
       return;
     }
-
-    // 1. split the expression since operators have spaces around them to make it easier
+    else if (value===".") {
+      // 1. split the expression since operators have spaces around them to make it easier
     const arrValue = expression.split(" ");
-    // console.log("array value: ", arrValue[arrValue.length-1])
-    let lastValueHasDecimal = false;
+    console.log("array value: ", arrValue[arrValue.length-1])
       // handles the decimal point
      // 2. check if the last element in the array has a decimal value
-    if(arrValue[arrValue.length - 1].indexOf(".") > -1 && value === "."){
-      lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
-    }
-    // checks if the value is already starting with a zero
-    else if(arrValue[arrValue.length-1].length > 0 && value==="0"){
-      // console.log("first number: ", arrValue[arrValue.length-1][0])
-      if(arrValue[arrValue.length-1][0] ==="0"){
-        lastValueHasDecimal = true;
-      }
-    }
+     const lastValueHasDecimal = arrValue[arrValue.length - 1].indexOf(".") > -1 && value === ".";
+    console.log("decimal: ", lastValueHasDecimal);
+    
   
     // 3 . if it has a decimal value return the previous expression, else return the epression+value
       setExpression(lastValueHasDecimal
-        ? expression.replace(/\s+/g, '').trim()
-        : expression.concat(value).replace(/\s+/g, '').trim())
-     
+        ? expression.trim()
+        : expression.concat(value).trim())
+        return;
+    }
+    
+    setExpression(expression.concat(value));
       
     // makes sure to append a number after the equal to sign so we can continue with the calculation
     if(expression.includes("=")){
@@ -122,7 +121,7 @@ function App() {
    if(expression===""){
      return;
    }
-  const filteredExpression = expression.match(/(\*|\+|\/|-)?(\.|-)?\d+/g).join('');
+  const filteredExpression = expression.replace(/\s+/g, '').match(/(\*|\+|\/|-)?(\.|-)?\d+/g).join('');
   // used the math-expression-evaluator library instead of eval since eval is unsafe
     let result;
     try {
