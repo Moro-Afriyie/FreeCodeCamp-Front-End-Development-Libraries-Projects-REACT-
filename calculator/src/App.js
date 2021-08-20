@@ -97,6 +97,13 @@ function App() {
         : expression.concat(value))
         return;
     }
+    // handles the multiple zeros bug
+    else if (value==="0") {
+    const arrValue = currentValue.split("");
+      if((arrValue.length>0 && arrValue.length<=1) && arrValue[0]==="0"){
+        return;
+      }
+    }
     if(operators.includes(currentValue) && !operators.includes(value)){
       setCurrentValue(currentValue.replace(currentValue,value));
       setExpression(expression.concat(value));
@@ -189,8 +196,8 @@ function App() {
         <section className="button-container">
         <button onClick={handleAllClear} id="clear">AC</button>
           <button onClick={handleClear} id="btn-clear">C</button>
-          {/* <button onClick={()=>handleDisplay("±")} id="toggle">±</button> */}
-           <button  id="toggle">±</button>
+          <button onClick={()=>handleDisplay("%")} id="toggle">%</button>
+           {/* <button  id="toggle">±</button> */}
           {calculatorNumbers.map((btn)=>{
             return <button 
             className="btn-number"
