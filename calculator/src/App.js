@@ -94,7 +94,7 @@ function App() {
     // handles the multiple zeros bug
     else if (value==="0") {
     const arrValue = currentValue.split("");
-      if((arrValue.length>0 && arrValue.length<=1) && arrValue[0]==="0"){
+      if(arrValue.length===1 && arrValue[0]==="0"){
         return;
       }
     }
