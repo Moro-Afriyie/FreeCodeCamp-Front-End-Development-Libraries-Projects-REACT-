@@ -91,7 +91,7 @@ function App() {
         : expression.concat(value));
         return;
     }
-    // handles the multiple zeros bug
+    // handles the multiple zeros 
     else if (value==="0") {
     const arrValue = currentValue.split("");
       if((arrValue.length>0 && arrValue.length<=1) && arrValue[0]==="0"){
