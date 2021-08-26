@@ -88,7 +88,7 @@ function App() {
         : currentValue.concat(value))
           setExpression(lastValueHasDecimal
         ? expression
-        : expression.concat(value))
+        : expression.concat(value));
         return;
     }
     // handles the multiple zeros bug
