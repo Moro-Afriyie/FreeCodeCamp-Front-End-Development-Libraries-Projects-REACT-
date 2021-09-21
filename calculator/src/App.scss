@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
 /****VARIABLES****/
 $backgroundColor: #f0f5f1;
 $borderColor: #3c4552;
@@ -11,143 +11,145 @@ $operationsColor: #ffd8ff;
 $equalColor1: #fe816e;
 $equalColor2: #ff34af;
 $buttonTextColor: #5f49cd;
-$btn-clearColor: #818181; 
+$btn-clearColor: #818181;
 $boxShadowColor: #b0a1b6;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color:$backgroundColor;
-    font-family: 'Montserrat', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $backgroundColor;
+  font-family: "Montserrat", sans-serif;
 }
-.title{
+.title {
   text-align: center;
   font-family: Russo One, sans-serif;
-      margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
-.container{
+.container {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  // height: 100vh;
+}
+
+.App {
+  width: 18rem;
+  height: 34rem;
+  border: 10px solid #3c4552;
+  border-radius: 2.1rem;
+  box-shadow: 0px 28px 95px 3px $boxShadowColor;
+  -webkit-box-shadow: 0px 28px 95px 3px $boxShadowColor;
+  -moz-box-shadow: 0px 28px 95px 3px $boxShadowColor;
+  position: relative;
+  background-color: $buttonContainerColor;
+  .notch {
+    position: absolute;
+    background-color: $borderColor;
+    padding: 0rem;
+    top: 0;
+    left: 16%;
+    height: 20px;
+    width: 67%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .display {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background-color: $displayColor;
+    height: 11rem;
+    border-top-left-radius: 1.1rem;
+    padding: 0rem 1rem 1rem 1rem;
+    border-top-right-radius: 1.2rem;
+    h3 {
+      color: $equalColor2;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
 
-.App{
-    width: 18rem;
-    height: 34rem;
-    border: 10px solid #3c4552;
-    border-radius: 2.1rem;
-    box-shadow: 0px 28px 95px 3px $boxShadowColor;
-    -webkit-box-shadow: 0px 28px 95px 3px $boxShadowColor;
-    -moz-box-shadow: 0px 28px 95px 3px $boxShadowColor;
-    position: relative;
+  #display2 {
+    flex-direction: column;
+    text-align: right;
+    width: 240px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: 125px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+    overflow: auto;
+  }
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.5rem;
     background-color: $buttonContainerColor;
-    .notch{
-        position: absolute;
-        background-color: $borderColor;
-        padding: 0rem;
-        top: 0;
-        left: 16%;
-        height: 20px;
-        width: 67%;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+    height: 18rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem 1rem;
+    button {
+      font-size: 1.2rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .btn-number {
+      color: $buttonTextColor;
+    }
+    #zero {
+      grid-column: 1 / span 2;
+      border-radius: 40px;
+      width: auto;
+    }
+    #clear,
+    #btn-clear,
+    #toggle {
+      color: $btn-clearColor;
+    }
+    #divide,
+    #multiply,
+    #divide,
+    #subtract,
+    #add {
+      color: $equalColor2;
+      font-size: 1.8rem;
+    }
+    #multiply {
+      padding-top: 1rem;
+    }
+    #decimal {
+      font-size: 2.6rem;
+      padding-bottom: 1.5rem;
+    }
 
+    #equals {
+      background: linear-gradient(0deg, $equalColor2, $equalColor1);
+      color: #ffffff;
     }
-    .display{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-        background-color: $displayColor;
-        height: 11rem;
-        border-top-left-radius: 1.1rem;
-        padding: 0rem 1rem 1rem 1rem;
-        border-top-right-radius: 1.2rem;
-        h3{
-            color: $equalColor2;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-        }
-        h1{
-        font-size: 2rem;
-        }
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    background-color: $buttonContainerColor;
+    justify-content: center;
+    margin: 2px 3rem;
+    .bar {
+      width: 133px;
+      height: 5px;
+      background-color: #000000;
+      border-radius: 2px;
     }
-
-    #display2{
-        flex-direction: column;
-        text-align: right;
-        width: 240px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        height: 125px;
-        display: flex;
-        align-content: flex-end;
-        justify-content: flex-end;
-        overflow: auto;
-    }
-    .button-container{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        gap: 0.5rem;
-        background-color: $buttonContainerColor;
-        height: 18rem;
-        margin-bottom: 3rem;
-        padding: 0.5rem 1rem;
-        button{
-            font-size: 1.2rem;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-           
-        }
-        .btn-number{
-            color: $buttonTextColor;
-        }
-        #zero{
-            grid-column: 1/ span 2;
-            border-radius: 40px;
-            width: auto;
-        }
-        #clear,#btn-clear,#toggle{
-            color: $btn-clearColor;
-        }
-        #divide,#multiply,#divide,#subtract,#add{
-            color: $equalColor2;
-            font-size: 1.8rem;
-        }
-        #multiply{
-            padding-top: 1rem;
-        }
-        #decimal{
-            font-size: 2.6rem;
-            padding-bottom: 1.5rem;
-        }
-
-        #equals{
-            background: linear-gradient(0deg,$equalColor2,$equalColor1);
-            color: #ffffff;
-        }
-
-      
-    }
-    .footer{
-        display: flex;
-        align-items: center;
-        background-color: $buttonContainerColor;
-        justify-content: center;
-        margin: 2px 3rem;
-        .bar{
-            width: 133px;
-            height: 5px;
-            background-color: #000000;
-            border-radius: 2px;
-        }
-    }
+  }
 }
