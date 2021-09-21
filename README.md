@@ -5,4 +5,5 @@ This repository contains the projects in the Front End Development Libraries cou
 * Random Quote Machine : [https://codepen.io/moro-afriyie/pen/MWmqQqb](https://codepen.io/moro-afriyie/pen/MWmqQqb)
 * Markdown Previewer : [https://codepen.io/moro-afriyie/pen/ZEKqErr](https://codepen.io/moro-afriyie/pen/ZEKqErr)
 * Drum Machine : [https://codepen.io/moro-afriyie/pen/gOWqWJv](https://codepen.io/moro-afriyie/pen/gOWqWJv)
+* Calculator : [https://codepen.io/moro-afriyie/pen/WNjVjdb](https://codepen.io/moro-afriyie/pen/WNjVjdb)
 
