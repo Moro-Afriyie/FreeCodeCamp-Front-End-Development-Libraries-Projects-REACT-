@@ -54,7 +54,9 @@ function App() {
     setMarkdown(e.target.value);
   }
   return (
-    <main className="App">
+    <main className="container">
+       <h1 className="title">Markdown Previewer</h1>
+    <section className="App">
       <div className="editor-container">
        <div className="editor-header">
 
@@ -73,8 +75,11 @@ function App() {
           __html: marked(markdown,{breaks: true})}}>
       </div>
     </div>
-    </main>
+    </section>
+    </main>  
+      
   );
 }
+
 
 export default App;
