@@ -1,105 +1,107 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
-$boxShadow: 0px 2px 11px 0px rgba(0,0,0,0.75);;
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+$boxShadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.75);
 $backgroundColor: #f5cd79;
 $boxColour: #f5e5c6;
 $headerColour: #efb442;
 
-
-*{
-  padding:0;
+* {
+  padding: 0;
   margin: 0;
-  
 }
-body{
+body {
   background-color: $backgroundColor;
 }
-
+.title {
+  text-align: center;
+  font-family: Russo One, sans-serif;
+  margin: 0.5rem 0;
+}
 .App {
   display: flex;
   gap: 2rem;
   padding: 2rem 1rem;
- &>div{
-flex-basis: 100%;
-height: 85vh;
- }
- .editor-container{
-   display: flex;
-   flex-direction: column;
-  
-   width: 30rem;
-   box-shadow: $boxShadow;
-   textarea{
-     height: 100%;
-     outline: none;
-     background-color: $boxColour;
-     padding: 0.5rem;
-   }
- }
- .heading{
-   border: 1px solid;
-   text-align: center;
-   padding: 0.5rem;
-   background-color: $headerColour;
-   box-shadow:$boxShadow;
-   font-family: Russo One;
-   i{
-     margin-right: 0.5rem;
-   }
- }
- .preview-container{
-  //  border: 1px solid;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: $boxShadow;
-  overflow-wrap: break-word;
- }
- #preview{
-  background-color: $boxColour;
-  padding: 0.5rem 2rem;
-  display: flex;
+  & > div {
+    flex-basis: 100%;
+    height: 85vh;
+  }
+  .editor-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 30rem;
+    box-shadow: $boxShadow;
+    textarea {
+      height: 100%;
+      outline: none;
+      background-color: $boxColour;
+      padding: 0.5rem;
+    }
+  }
+  .heading {
+    border: 1px solid;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: $headerColour;
+    box-shadow: $boxShadow;
+    font-family: Russo One;
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+  .preview-container {
+    //  border: 1px solid;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $boxShadow;
+    overflow-wrap: break-word;
+  }
+  #preview {
+    background-color: $boxColour;
+    padding: 0.5rem 2rem;
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
     overflow-y: auto;
     h1 {
       border-bottom: 2px solid #224b4b;
-  }
-  h2 {
-    border-bottom: 1px solid #224b4b;
-}
-  img{
-    display: block;
-    max-width: 90%;
-  }
-  &>p> code {
-    padding: 3px;
-  }
+    }
+    h2 {
+      border-bottom: 1px solid #224b4b;
+    }
+    img {
+      display: block;
+      max-width: 90%;
+    }
+    & > p > code {
+      padding: 3px;
+    }
 
-  code {
+    code {
       background: white;
       font-size: 0.875rem;
       font-weight: bold;
     }
-   pre {
+    pre {
       display: block;
       background: white;
       padding: 5px;
       line-height: 1.2;
+    }
+    blockquote {
+      border-left: 3px solid #224b4b;
+      color: #224b4b;
+      padding-left: 5px;
+      margin-left: 25px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td,
+    th {
+      border: 2px solid #224b4b;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
-  blockquote {
-    border-left: 3px solid #224b4b;
-    color: #224b4b;
-    padding-left: 5px;
-    margin-left: 25px;
-}
- table {
-  border-collapse: collapse;
-}
- td,th {
-  border: 2px solid #224b4b;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-  }
- 
 }
