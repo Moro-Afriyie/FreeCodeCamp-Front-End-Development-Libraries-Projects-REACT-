@@ -88,10 +88,10 @@ function App() {
         : currentValue.concat(value))
           setExpression(lastValueHasDecimal
         ? expression
-        : expression.concat(value));
+        : expression.concat(value))
         return;
     }
-    // handles the multiple zeros 
+    // handles the multiple zeros bug
     else if (value==="0") {
     const arrValue = currentValue.split("");
       if(arrValue.length===1 && arrValue[0]==="0"){
@@ -175,6 +175,8 @@ function App() {
       setResult(0);
  }
   return (
+    <div>
+      <h1 className="title">Calculator</h1>
     <main className="container">
       <div className="App">
         <section className="notch">
@@ -211,6 +213,7 @@ function App() {
 
       </div>
     </main>
+      </div>
   );
 }
 
