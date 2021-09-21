@@ -1,8 +1,9 @@
-*{
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   font-family: "Space Mono", monospace;
   display: flex;
   align-items: center;
@@ -11,10 +12,18 @@ body{
   background-color: rgb(9, 242, 250);
   color: rgb(9, 242, 250);
 }
+.title {
+  text-align: center;
+  font-family: Russo One, sans-serif;
+  margin: 1.5rem 0;
+  color: #ffffff;
+}
+
 div {
   position: relative;
   z-index: 2;
 }
+
 #quote-box {
   border: 1px solid;
   width: 40rem;
@@ -24,9 +33,9 @@ div {
   padding: 40px 50px;
   display: table;
   background-color: #fff;
-  box-shadow: 0px 2px 21px -7px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 0px 2px 21px -7px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 2px 21px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 21px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 21px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 21px -7px rgba(0, 0, 0, 0.75);
 }
 #quote-box .quote-text {
   text-align: center;
@@ -49,27 +58,27 @@ div {
   margin: auto;
   display: block;
 }
-a{
+a {
   text-decoration: none;
-  font-family:sans-serif ;
+  font-family: sans-serif;
 }
 #quote-box .buttons .button {
- 
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    outline: none;
-    font-size: 1.2rem;
-    padding: 8px 18px 6px 18px;
-    margin-top: 34px;
-    opacity: 1;
-    height: 45px;
-    cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 8px 18px 6px 18px;
+  margin-top: 34px;
+  opacity: 1;
+  height: 45px;
+  cursor: pointer;
 }
 .button:hover {
   opacity: 0.9;
 }
-#quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#tumblr-quote {
+#quote-box .buttons .button#tweet-quote,
+#quote-box .buttons .button#tumblr-quote {
   float: left;
   padding: 0px;
   padding-top: 8px;
@@ -78,9 +87,8 @@ a{
   margin-right: 5px;
   height: 40px;
   width: 8rem;
-
 }
-.buttons span{
+.buttons span {
   font-size: 1.2rem;
   margin-left: 0.3rem;
 }
