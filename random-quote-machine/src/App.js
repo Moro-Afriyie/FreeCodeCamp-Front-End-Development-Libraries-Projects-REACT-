@@ -1,7 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 
-
 function App() {
     const [quotes , setQuotes] = useState([]); // state to handle the quotes
     const [randomQuote, setRandomQuote] = useState([]); // state to get random quotes
@@ -41,6 +40,8 @@ function App() {
     }
     
     return (
+     <main>
+        <h1 className="title">Random Quote Machine</h1>
     <div id="wrapper">
         { <div id="quote-box">
         { quotes.length !==0 &&
@@ -56,7 +57,9 @@ function App() {
             </div>
         </div>}
      
-    </div>    
+    </div>   
+        </main>
+        
         );
    
     }
