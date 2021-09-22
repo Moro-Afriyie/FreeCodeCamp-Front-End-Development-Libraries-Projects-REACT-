@@ -51,6 +51,17 @@ function App() {
       date = new Date().getTime();
       if(date > nextDate){
         setDisplayTime(prev => {
+          if(prev<=0 && onBreakVariable===false){
+            playAudio();
+            onBreakVariable = true;
+            setOnBreak(true);
+            return breakLength; // so that the display time is equal to the break time = 5 minutes
+          }
+          else if(prev <= 0 && onBreakVariable){
+            onBreakVariable = false;
+            setOnBreak(false);
+            return sessionLength;
+          }
           return prev-1;
         });
         nextDate += second;
