@@ -4,7 +4,7 @@ import {useState} from 'react';
 function App() {
   const [breakLength, setBreakLength] = useState(5*60);
   const [sessionLength, setSessionLength] = useState(25*60);
-  const [displayTime, setDisplayTime] = useState(26*60); // 25 minutes
+  const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
   const [timerOn, settimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
