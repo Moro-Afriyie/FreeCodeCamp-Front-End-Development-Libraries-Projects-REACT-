@@ -71,17 +71,17 @@ function App() {
         <div id="break-label">
           <p>Break Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-1,"break")}>-</button>
+            <button onClick={()=> handleChangeBreakLength(-1,"break")}><i className="fa fa-arrow-circle-down"></i></button>
             <p>{breakLength}</p>
-            <button onClick={()=> handleChangeBreakLength(1,"break")}>+</button>
+            <button onClick={()=> handleChangeBreakLength(1,"break")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
         <div id="section-label">
           <p>Session Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-1,"session")} >-</button>
+            <button onClick={()=> handleChangeBreakLength(-1,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
             <p>{sessionLength}</p>
-            <button onClick={()=> handleChangeBreakLength(1,"session")}>+</button>
+            <button onClick={()=> handleChangeBreakLength(1,"session")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
       </section>
