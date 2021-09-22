@@ -5,6 +5,7 @@ function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
+  const [TimerOn, setTimerOn] = useState(false);
 
   const formatTime = (time)=>{
     let minutes = Math.floor(time / 60);
@@ -14,11 +15,21 @@ function App() {
  
   const handleChangeBreakLength = (number, type)=>{
     if(type==="break"){
+      if(breakLength<=1 && number < 0){
+        return;
+      }
       setBreakLength(prev => prev + number);
      
     }
     else{
+      if(sessionLength<=1 && number < 0){
+        return;
+      }
       setSessionLength(prev => prev + number);
+      // check if the timer is on
+      if(!TimerOn){
+        setDisplayTime(prev => prev + number*60);
+      }
     }
      
   }
@@ -38,9 +49,9 @@ function App() {
         <div id="section-label">
           <p>Session Length</p>
           <div className="button-container">
-            <button >-</button>
+            <button onClick={()=> handleChangeBreakLength(-1,"session")} >-</button>
             <p>{sessionLength}</p>
-            <button>+</button>
+            <button onClick={()=> handleChangeBreakLength(1,"session")}>+</button>
           </div>
         </div>
       </section>
