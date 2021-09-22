@@ -38,7 +38,7 @@ function App() {
   const controlTimer =()=>{
   let second = 1000;
   let date = new Date().getTime(); // get the current date in seconds
-  let nextDate = new Date().getTime + second;
+  let nextDate = new Date().getTime() + second;
   let onBreakVariable = onBreak;
   if(!timerOn){
     let interval = setInterval(()=>{
