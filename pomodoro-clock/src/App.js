@@ -56,7 +56,7 @@ function App() {
   if(timerOn){
     clearInterval(localStorage.getItem("interval-id"));
   }
-  settimerOn(true);
+  settimerOn(!timerOn);
   }
 
   const handleResetTime = ()=>{
