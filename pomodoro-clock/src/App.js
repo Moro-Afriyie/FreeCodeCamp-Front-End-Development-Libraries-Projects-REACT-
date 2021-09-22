@@ -7,11 +7,17 @@ function App() {
   const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
   const [timerOn, settimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
+  const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
   const formatTime = (time)=>{
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     return `${minutes> 10 ? minutes : "0" + minutes}:${seconds> 10 ? seconds : "0" + seconds}` 
+  }
+
+  const playAudio = ()=>{
+    audio.currentTime = 0;
+    audio.play();
   }
  
   const handleChangeBreakLength = (number, type)=>{
