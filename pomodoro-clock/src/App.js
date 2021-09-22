@@ -38,6 +38,9 @@ function App() {
 
   }
 
+  const handleResetTime = ()=>[
+    
+  ]
   return (
     <main className="container">
       <section className="time-controls">
@@ -65,7 +68,7 @@ function App() {
          {TimerOn? <button>Pause</button> : <button>Play</button>}
        </div>
        <div className="reset-button">
-         <button>reset</button>
+         <button onClick={handleResetTime}>reset</button>
        </div>
       </section>
     </main>
