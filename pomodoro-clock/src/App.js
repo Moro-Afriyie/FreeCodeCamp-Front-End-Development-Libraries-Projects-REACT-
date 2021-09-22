@@ -34,6 +34,9 @@ function App() {
      
   }
 
+  const controlTimer =()=>{
+
+  }
 
   return (
     <main className="container">
@@ -58,6 +61,12 @@ function App() {
       <h1 className="title">Pomodoro Clock</h1>
       <section className="App">
        <h1>{formatTime(displayTime)}</h1>
+       <div className="control-buttons" onClick={controlTimer}>
+         {TimerOn? <button>Pause</button> : <button>Play</button>}
+       </div>
+       <div className="reset-button">
+         <button>reset</button>
+       </div>
       </section>
     </main>
   );
