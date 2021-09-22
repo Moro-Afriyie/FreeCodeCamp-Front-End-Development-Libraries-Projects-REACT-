@@ -89,10 +89,19 @@ function App() {
       <section className="App">
        <h1>{formatTime(displayTime)}</h1>
        <button className="control-buttons" onClick={controlTimer}>
-         {timerOn? "Pause": "Play"}
+         {timerOn? <span className="material-icons">
+                pause_circle_filled
+                </span>: <span className="material-icons">
+                play_circle
+                </span>
+        }
        </button>
        <div className="reset-button">
-         <button onClick={handleResetTime}>reset</button>
+         <button onClick={handleResetTime}>
+           <span className="material-icons">
+                restart_alt
+          </span>
+        </button>
        </div>
       </section>
     </main>
