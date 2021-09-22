@@ -5,7 +5,7 @@ function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
   const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
-  const [TimerOn, setTimerOn] = useState(false);
+  const [timerOn, settimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
 
   const formatTime = (time)=>{
@@ -28,7 +28,7 @@ function App() {
       }
       setSessionLength(prev => prev + number);
       // check if the timer is on
-      if(!TimerOn){
+      if(!timerOn){
         setDisplayTime(prev => prev + number*60);
       }
     }
@@ -40,8 +40,7 @@ function App() {
   let date = new Date().getTime(); // get the current date in seconds
   let nextDate = new Date().getTime + second;
   let onBreakVariable = onBreak;
-  if(!TimerOn){
-
+  if(!timerOn){
     let interval = setInterval(()=>{
       date = new Date().getTime();
       if(date > nextDate){
@@ -51,7 +50,13 @@ function App() {
         nextDate += second;
       }
     },30) //update it every 30 milliseconds
+    localStorage.clear();
+    localStorage.setItem("interval-id", interval);
   }
+  if(timerOn){
+    clearInterval(localStorage.getItem("interval-id"));
+  }
+  settimerOn(true);
   }
 
   const handleResetTime = ()=>{
@@ -84,7 +89,7 @@ function App() {
       <section className="App">
        <h1>{formatTime(displayTime)}</h1>
        <button className="control-buttons" onClick={controlTimer}>
-         {TimerOn? "Pause": "Play"}
+         {timerOn? "Pause": "Play"}
        </button>
        <div className="reset-button">
          <button onClick={handleResetTime}>reset</button>
