@@ -2,12 +2,12 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(5);
-  const [sessionLength, setSessionLength] = useState(25);
-  const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
+  const [breakLength, setBreakLength] = useState(5*60);
+  const [sessionLength, setSessionLength] = useState(25*60);
+  const [displayTime, setDisplayTime] = useState(26*60); // 25 minutes
   const [timerOn, settimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
-  const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
+  // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
   const formatTime = (time)=>{
     let minutes = Math.floor(time / 60);
@@ -16,26 +16,27 @@ function App() {
   }
 
   const playAudio = ()=>{
+    let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
     audio.currentTime = 0;
     audio.play();
   }
  
   const handleChangeBreakLength = (number, type)=>{
     if(type==="break"){
-      if(breakLength<=1 && number < 0){
+      if(breakLength<=60 && number < 0){
         return;
       }
       setBreakLength(prev => prev + number);
      
     }
     else{
-      if(sessionLength<=1 && number < 0){
+      if(sessionLength<=60 && number < 0){
         return;
       }
       setSessionLength(prev => prev + number);
       // check if the timer is on
       if(!timerOn){
-        setDisplayTime(prev => prev + number*60);
+        setDisplayTime(prev => prev + number);
       }
     }
      
@@ -57,7 +58,7 @@ function App() {
             setOnBreak(true);
             return breakLength; // so that the display time is equal to the break time = 5 minutes
           }
-          else if(prev <= 0 && onBreakVariable){
+          else if(prev<=0 && onBreakVariable){
             onBreakVariable = false;
             setOnBreak(false);
             return sessionLength;
@@ -78,8 +79,8 @@ function App() {
 
   const handleResetTime = ()=>{
   setDisplayTime(25*60);
-  setBreakLength(5);
-  setSessionLength(25);
+  setBreakLength(5*60);
+  setSessionLength(25*60);
   }
 
   return (
@@ -88,17 +89,17 @@ function App() {
         <div id="break-label">
           <p>Break Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-1,"break")}><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{breakLength}</p>
-            <button onClick={()=> handleChangeBreakLength(1,"break")}><i className="fa fa-arrow-circle-up"></i></button>
+            <button onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
+            <p>{formatTime(breakLength)}</p>
+            <button onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
         <div id="section-label">
           <p>Session Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-1,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{sessionLength}</p>
-            <button onClick={()=> handleChangeBreakLength(1,"session")}><i className="fa fa-arrow-circle-up"></i></button>
+            <button onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
+            <p>{formatTime(sessionLength)}</p>
+            <button onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
       </section>
