@@ -90,17 +90,17 @@ function App() {
         <div id="break-label">
           <p>Break Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
+            <button id="break-decrement" onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
             <p>{Math.floor(breakLength/60)}</p>
-            <button onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
+            <button id="break-increment" onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
         <div id="section-label">
           <p>Session Length</p>
           <div className="button-container">
-            <button onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
+            <button id="session-decrement" onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
             <p>{Math.floor(sessionLength/60)}</p>
-            <button onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
+            <button id="session-increment" onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
       </section>
