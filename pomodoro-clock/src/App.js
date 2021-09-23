@@ -2,10 +2,10 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(5*60);
-  const [sessionLength, setSessionLength] = useState(25*60);
-  const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
-  const [timerOn, settimerOn] = useState(false);
+  const [breakLength, setBreakLength] = useState(1*60);
+  const [sessionLength, setSessionLength] = useState(2*60);
+  const [displayTime, setDisplayTime] = useState(2*60); // 25 minutes
+  const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
@@ -80,10 +80,12 @@ function App() {
   if(timerOn){
     clearInterval(localStorage.getItem("interval-id"));
   }
-  settimerOn(!timerOn);
+  setTimerOn(!timerOn);
   }
 
   const handleResetTime = ()=>{
+ clearInterval(localStorage.getItem("interval-id"));
+ setTimerOn(false);
   setDisplayTime(25*60);
   setBreakLength(5*60);
   setSessionLength(25*60);
@@ -113,7 +115,7 @@ function App() {
       <section className="App">
         <div className="timer-container">
           <div id="timer-label">
-            <h2>Session</h2>
+            {onBreak ? <h2>Session</h2>: <h2>Break</h2>}
           </div>
           <div id="time-left">
             <h1>{formatTime(displayTime)}</h1>
