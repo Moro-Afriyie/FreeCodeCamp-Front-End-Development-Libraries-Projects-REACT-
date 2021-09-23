@@ -85,12 +85,13 @@ function App() {
 
   return (
     <main className="container">
+      <h1 className="title">Pomodoro Clock</h1>
       <section className="time-controls">
         <div id="break-label">
           <p>Break Length</p>
           <div className="button-container">
             <button onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{formatTime(breakLength)}</p>
+            <p>{Math.floor(breakLength/60)}</p>
             <button onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
@@ -98,12 +99,11 @@ function App() {
           <p>Session Length</p>
           <div className="button-container">
             <button onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{formatTime(sessionLength)}</p>
+            <p>{Math.floor(sessionLength/60)}</p>
             <button onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
       </section>
-      <h1 className="title">Pomodoro Clock</h1>
       <section className="App">
        <h1>{formatTime(displayTime)}</h1>
        <button className="control-buttons" onClick={controlTimer}>
