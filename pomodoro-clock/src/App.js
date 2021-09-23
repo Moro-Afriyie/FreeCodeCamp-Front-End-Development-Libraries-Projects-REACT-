@@ -26,11 +26,17 @@ function App() {
       if(breakLength<=60 && number < 0){
         return;
       }
+      else if (breakLength>=60*60) {
+        return;
+      }
       setBreakLength(prev => prev + number);
      
     }
     else{
       if(sessionLength<=60 && number < 0){
+        return;
+      }
+      else if (sessionLength>=60*60) {
         return;
       }
       setSessionLength(prev => prev + number);
@@ -91,22 +97,29 @@ function App() {
           <p>Break Length</p>
           <div className="button-container">
             <button id="break-decrement" onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{Math.floor(breakLength/60)}</p>
+            <p id="break-length">{Math.floor(breakLength/60)}</p>
             <button id="break-increment" onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
-        <div id="section-label">
+        <div id="session-label">
           <p>Session Length</p>
           <div className="button-container">
             <button id="session-decrement" onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
-            <p>{Math.floor(sessionLength/60)}</p>
+            <p id="session-length">{Math.floor(sessionLength/60)}</p>
             <button id="session-increment" onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
           </div>
         </div>
       </section>
       <section className="App">
-       <h1>{formatTime(displayTime)}</h1>
-       <button className="control-buttons" onClick={controlTimer}>
+        <div className="timer-container">
+          <div id="timer-label">
+            <h2>Session</h2>
+          </div>
+          <div id="time-left">
+            <h1>{formatTime(displayTime)}</h1>
+          </div>
+       </div>
+       <button className="control-buttons" onClick={controlTimer} id="start_stop">
          {timerOn? <span className="material-icons">
                 pause_circle_filled
                 </span>: <span className="material-icons">
@@ -115,7 +128,7 @@ function App() {
         }
        </button>
        <div className="reset-button">
-         <button onClick={handleResetTime}>
+         <button onClick={handleResetTime} id="reset">
            <span className="material-icons">
                 restart_alt
           </span>
