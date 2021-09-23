@@ -2,9 +2,9 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(1*60);
-  const [sessionLength, setSessionLength] = useState(2*60);
-  const [displayTime, setDisplayTime] = useState(2*60); // 25 minutes
+  const [breakLength, setBreakLength] = useState(5*60);
+  const [sessionLength, setSessionLength] = useState(25*60);
+  const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
@@ -58,11 +58,12 @@ function App() {
       date = new Date().getTime();
       if(date > nextDate){
         setDisplayTime(prev => {
-          if(prev<=0 && onBreakVariable===false){
+          if(prev<=0 && !onBreakVariable){
             playAudio();
             onBreakVariable = true;
             setOnBreak(true);
             return breakLength; // so that the display time is equal to the break time = 5 minutes
+        
           }
           else if(prev<=0 && onBreakVariable){
             onBreakVariable = false;
