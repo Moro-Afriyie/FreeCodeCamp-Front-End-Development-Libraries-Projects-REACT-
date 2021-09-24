@@ -70,12 +70,14 @@ function App() {
        
           // }
           if(prev<=0 && onBreak ==="break"){
+            playAudio();
             setOnBreak("session");
             console.log({onBreak})
             return breakLength;
 
           }
           else if(prev<=0 && onBreak ==="session"){
+            playAudio();
             setOnBreak("break");
             console.log({onBreak})
             return sessionLength;
