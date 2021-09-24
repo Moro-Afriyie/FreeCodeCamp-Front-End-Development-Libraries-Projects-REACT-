@@ -70,16 +70,14 @@ function App() {
        
           // }
           if(prev<=0 && onBreak ==="break"){
-            const newBreak = "session";
-            setOnBreak(newBreak);
-            console.log({newBreak, onBreak})
+            setOnBreak("session");
+            console.log({onBreak})
             return breakLength;
 
           }
           else if(prev<=0 && onBreak ==="session"){
-            const newBreak = "break";
-            setOnBreak(newBreak);
-            console.log({newBreak, onBreak})
+            setOnBreak("break");
+            console.log({onBreak})
             return sessionLength;
           }
           return prev-1;
