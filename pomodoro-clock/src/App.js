@@ -6,7 +6,7 @@ function App() {
   const [sessionLength, setSessionLength] = useState(5);
   const [displayTime, setDisplayTime] = useState(5); // 25 minutes
   const [timerOn, setTimerOn] = useState(false);
-  const [onBreak, setOnBreak] = useState(false);
+  const [onBreak, setOnBreak] = useState("break");
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
   const formatTime = (time)=>{
@@ -16,9 +16,9 @@ function App() {
   }
 
   const playAudio = ()=>{
-    let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
-    audio.currentTime = 0;
-    audio.play();
+    // let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
+    // audio.currentTime = 0;
+    // audio.play();
   }
  
   const handleChangeBreakLength = (number, type)=>{
@@ -46,28 +46,41 @@ function App() {
   let second = 1000;
   let date = new Date().getTime(); // get the current date in seconds
   let nextDate = new Date().getTime() + second;
-  let onBreakVariable = onBreak;
+  // let onBreakVariable = onBreak;
   if(!timerOn){
     let interval = setInterval(()=>{
       date = new Date().getTime();
       if(date > nextDate){
         setDisplayTime((prev) => {
-          console.log({prev, onBreakVariable});
-          if(prev<=0 && !onBreakVariable){
-            playAudio();
-            onBreakVariable = true;
-            setOnBreak(true);
-            console.log({onBreakVariable});
-           console.log({breakLength, displayTime,onBreak, onBreakVariable});
-           return breakLength; // so that the display time is equal to the break time = 5 minutes
-          }
-          else if(prev<=0 && onBreakVariable){
-            playAudio();
-            onBreakVariable = false;
-            setOnBreak(true);
-            console.log({sessionLength, displayTime,onBreak });
-            return sessionLength;
+          // console.log({prev, onBreakVariable});
+          // if(prev<=0 && !onBreakVariable){
+          //   playAudio();
+          //   onBreakVariable = true;
+          //   setOnBreak(true);
+          //   console.log({onBreakVariable});
+          //  console.log({breakLength, displayTime,onBreak, onBreakVariable});
+          //  return breakLength; // so that the display time is equal to the break time = 5 minutes
+          // }
+          // else if(prev<=0 && onBreakVariable){
+          //   playAudio();
+          //   onBreakVariable = false;
+          //   setOnBreak(true);
+          //   console.log({sessionLength, displayTime,onBreak });
+          //   return sessionLength;
        
+          // }
+          if(prev<=0 && onBreak ==="break"){
+            const newBreak = "session";
+            setOnBreak(newBreak);
+            console.log({newBreak, onBreak})
+            return breakLength;
+
+          }
+          else if(prev<=0 && onBreak ==="session"){
+            const newBreak = "break";
+            setOnBreak(newBreak);
+            console.log({newBreak, onBreak})
+            return sessionLength;
           }
           return prev-1;
         });
@@ -115,7 +128,7 @@ function App() {
       <section className="App">
         <div className="timer-container">
           <div id="timer-label">
-            {onBreak ? <h2>Break</h2> : <h2>Session</h2>}
+            {onBreak ==="break" ? <h2>Session</h2> : <h2>Break</h2>}
           </div>
           <div id="time-left">
             <h1>{formatTime(displayTime)}</h1>
