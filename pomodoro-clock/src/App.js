@@ -130,7 +130,7 @@ function App() {
         <div className="timer-container">
           <div id="timer-label">
             {/* {onBreak ==="break" ? <h2>Session</h2> : <h2>Break</h2>} */}
-            {onBreak? <h2>Sessios</h2> : <h2>Break</h2>}
+            {onBreak? <h2>Break</h2> : <h2>Session</h2>}
           </div>
           <div id="time-left">
             <h1>{formatTime(displayTime)}</h1>
