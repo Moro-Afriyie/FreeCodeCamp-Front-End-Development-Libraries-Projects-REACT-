@@ -2,9 +2,9 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(5*60);
-  const [sessionLength, setSessionLength] = useState(25*60);
-  const [displayTime, setDisplayTime] = useState(25*60); // 25 minutes
+  const [breakLength, setBreakLength] = useState(3);
+  const [sessionLength, setSessionLength] = useState(5);
+  const [displayTime, setDisplayTime] = useState(5); // 25 minutes
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
@@ -12,7 +12,7 @@ function App() {
   const formatTime = (time)=>{
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    return `${minutes> 10 ? minutes : "0" + minutes}:${seconds> 10 ? seconds : "0" + seconds}` 
+    return `${minutes> 9 ? minutes : "0" + minutes}:${seconds>9 ? seconds : "0" + seconds}` 
   }
 
   const playAudio = ()=>{
@@ -26,17 +26,11 @@ function App() {
       if(breakLength<=60 && number < 0){
         return;
       }
-      else if (breakLength>=60*60) {
-        return;
-      }
       setBreakLength(prev => prev + number);
      
     }
     else{
       if(sessionLength<=60 && number < 0){
-        return;
-      }
-      else if (sessionLength>=60*60) {
         return;
       }
       setSessionLength(prev => prev + number);
@@ -57,18 +51,23 @@ function App() {
     let interval = setInterval(()=>{
       date = new Date().getTime();
       if(date > nextDate){
-        setDisplayTime(prev => {
+        setDisplayTime((prev) => {
+          console.log({prev, onBreakVariable});
           if(prev<=0 && !onBreakVariable){
             playAudio();
             onBreakVariable = true;
             setOnBreak(true);
-            return breakLength; // so that the display time is equal to the break time = 5 minutes
-        
+            console.log({onBreakVariable});
+           console.log({breakLength, displayTime,onBreak, onBreakVariable});
+           return breakLength; // so that the display time is equal to the break time = 5 minutes
           }
           else if(prev<=0 && onBreakVariable){
+            playAudio();
             onBreakVariable = false;
-            setOnBreak(false);
+            setOnBreak(true);
+            console.log({sessionLength, displayTime,onBreak });
             return sessionLength;
+       
           }
           return prev-1;
         });
@@ -116,7 +115,7 @@ function App() {
       <section className="App">
         <div className="timer-container">
           <div id="timer-label">
-            {onBreak ? <h2>Session</h2>: <h2>Break</h2>}
+            {onBreak ? <h2>Break</h2> : <h2>Session</h2>}
           </div>
           <div id="time-left">
             <h1>{formatTime(displayTime)}</h1>
