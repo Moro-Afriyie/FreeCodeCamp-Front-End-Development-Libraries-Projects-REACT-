@@ -26,11 +26,17 @@ function App() {
       if(breakLength<=60 && number < 0){
         return;
       }
+      else if (breakLength>59*60) {
+        return;
+      }
       setBreakLength(prev => prev + number);
      
     }
     else{
       if(sessionLength<=60 && number < 0){
+        return;
+      }
+      else if (sessionLength>59*60) {
         return;
       }
       setSessionLength(prev => prev + number);
