@@ -16,9 +16,9 @@ function App() {
   }
 
   const playAudio = ()=>{
-    // let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
-    // audio.currentTime = 0;
-    // audio.play();
+    let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
+    audio.currentTime = 0;
+    audio.play();
   }
  
   const handleChangeBreakLength = (number, type)=>{
