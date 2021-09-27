@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 function App() {
   const [breakLength, setBreakLength] = useState(5*60);
@@ -7,6 +7,8 @@ function App() {
   const [displayTime, setDisplayTime] = useState(25*60);
   const [timerOn, setTimerOn] = useState(true);
   const [TimerLabel, setTimerLabel] = useState("session");
+  const myAudio = useRef();
+  // const context = new AudioContext();
 
 
   useEffect(()=>{
@@ -18,13 +20,14 @@ function App() {
       date = new Date().getTime();
       if(date > nextDate){
         setDisplayTime((prev) => {
-          if(prev<=0 && TimerLabel ==="session"){
+          if(prev===0 && TimerLabel ==="session"){
             playAudio();
             setTimerLabel("break");
             return breakLength;
 
           }
-          else if(prev<=0 && TimerLabel !=="session"){
+          else if(prev===0 && TimerLabel !=="session"){
+            playAudio();
             setTimerLabel("session");
             return sessionLength;
           }
@@ -52,15 +55,18 @@ function App() {
   }
 
   const playAudio = ()=>{
-    let audio = document.getElementById("beep");
-    audio.currentTime = 0;
-    audio.play();
+    // let audio = document.getElementById("beep");
+    // audio.currentTime = 0;
+    // audio.play();
+    if(myAudio.current !== null){
+      myAudio.current.play();
+    }
   }
-  const pauseAudio =()=>{
-    let audio = document.getElementById("beep");
-    audio.currentTime = 0;
-    audio.pause();
-  }
+  // const pauseAudio =()=>{
+  //   let audio = document.getElementById("beep");
+  //   audio.currentTime = 0;
+  //   audio.pause();
+  // }
  
   const handleChangeBreakLength = (number, type)=>{
     if(type==="break"){
@@ -81,8 +87,7 @@ function App() {
         return;
       }
       setSessionLength(prev => prev + number);
-      // check if the timer is on
-      if(!timerOn){
+      if(timerOn){
         setDisplayTime(prev => prev + number);
       }
     }
@@ -100,7 +105,8 @@ function App() {
   setBreakLength(5*60);
   setSessionLength(25*60);
   setTimerLabel("session");
-  pauseAudio();
+  myAudio.current.pause();
+  myAudio.current.currentTime = 0;
   }
 
   return (
@@ -153,6 +159,7 @@ function App() {
        id="beep"
        src ="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
        type="audio"
+       ref={myAudio}
        >
        </audio>
       </section>
