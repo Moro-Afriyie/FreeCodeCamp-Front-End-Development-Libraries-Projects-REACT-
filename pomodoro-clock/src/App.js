@@ -8,7 +8,7 @@ function App() {
   const [timerOn, setTimerOn] = useState(true);
   // const [onBreak, setOnBreak] = useState(false);
   const [TimerLabel, setTimerLabel] = useState("session")
-  const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
+ // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
   useEffect(()=>{
   let second = 1000;
@@ -54,9 +54,14 @@ function App() {
   }
 
   const playAudio = ()=>{
-    // let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
+    let audio = document.getElementById("beep");
     audio.currentTime = 0;
     audio.play();
+  }
+  const pauseAudio =()=>{
+    let audio = document.getElementById("beep");
+    audio.currentTime = 0;
+    audio.pause();
   }
  
   const handleChangeBreakLength = (number, type)=>{
@@ -97,8 +102,7 @@ function App() {
   setBreakLength(5*60);
   setSessionLength(25*60);
   setTimerLabel("session");
-  audio.currentTime = 0;
-  audio.pause();
+  pauseAudio();
   }
 
   return (
@@ -147,6 +151,12 @@ function App() {
           </span>
         </button>
        </div>
+       <audio
+       id="beep"
+       src ="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+       type="audio"
+       >
+       </audio>
       </section>
     </main>
   );
