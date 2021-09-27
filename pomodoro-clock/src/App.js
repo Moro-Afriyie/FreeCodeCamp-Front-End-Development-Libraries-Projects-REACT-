@@ -58,12 +58,7 @@ function App() {
       myAudio.current.play();
     }
   }
-  // const pauseAudio =()=>{
-  //   let audio = document.getElementById("beep");
-  //   audio.currentTime = 0;
-  //   audio.pause();
-  // }
- 
+  
   const handleChangeBreakLength = (number, type)=>{
     if(type==="break"){
       if(breakLength<=60 && number < 0){
@@ -101,8 +96,7 @@ function App() {
   setBreakLength(5*60);
   setSessionLength(25*60);
   setTimerLabel("session");
-  myAudio.current.pause();
-  myAudio.current.currentTime = 0;
+  myAudio.current.load();
   }
 
   return (
@@ -129,7 +123,6 @@ function App() {
       <section className="App">
         <div className="timer-container">
           <div id="timer-label">
-            {/* {onBreak ==="break" ? <h2>Session</h2> : <h2>Break</h2>} */}
             {TimerLabel==="session"? <h2>Session</h2> : <h2>Break</h2>}
           </div>
           <div id="time-left-container">
