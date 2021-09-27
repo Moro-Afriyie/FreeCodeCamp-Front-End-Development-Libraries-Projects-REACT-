@@ -10,6 +10,9 @@ function App() {
   const myAudio = useRef();
   // const context = new AudioContext();
 
+//   const sleep = (milliseconds) => {
+//   return new Promise(resolve => setTimeout(resolve, milliseconds))
+// }
 
   useEffect(()=>{
   let second = 1000;
@@ -20,22 +23,25 @@ function App() {
       date = new Date().getTime();
       if(date > nextDate){
         setDisplayTime((prev) => {
-          if(prev===0 && TimerLabel ==="session"){
+          if(prev===0){
             playAudio();
-            setTimerLabel("break");
-            return breakLength;
+        
+            if(TimerLabel ==="session"){
+              setTimerLabel("break");
+              return breakLength;
 
+            }
+            else if(TimerLabel !=="session"){
+              setTimerLabel("session");
+              return sessionLength;
+            }
           }
-          else if(prev===0 && TimerLabel !=="session"){
-            playAudio();
-            setTimerLabel("session");
-            return sessionLength;
-          }
+          
           return prev-1;
          });
         nextDate += second;
       }
-    },30);
+    },1000);
     localStorage.clear();
     localStorage.setItem("interval-id", interval);
   }
@@ -59,6 +65,7 @@ function App() {
     // audio.currentTime = 0;
     // audio.play();
     if(myAudio.current !== null){
+      myAudio.current.currentTime = 0;
       myAudio.current.play();
     }
   }
@@ -136,8 +143,8 @@ function App() {
             {/* {onBreak ==="break" ? <h2>Session</h2> : <h2>Break</h2>} */}
             {TimerLabel==="session"? <h2>Session</h2> : <h2>Break</h2>}
           </div>
-          <div id="time-left">
-            <h1>{formatTime(displayTime)}</h1>
+          <div id="time-left-container">
+            <h1 id="time-left">{formatTime(displayTime)}</h1>
           </div>
        </div>
        <button className="control-buttons" onClick={controlTimer} id="start_stop">
