@@ -10,18 +10,9 @@ function App() {
   const myAudio = useRef();
   // const context = new AudioContext();
 
-//   const sleep = (milliseconds) => {
-//   return new Promise(resolve => setTimeout(resolve, milliseconds))
-// }
-
   useEffect(()=>{
-  let second = 1000;
-  let date = new Date().getTime(); // get the current date in seconds
-  let nextDate = new Date().getTime() + second;
   if(!timerOn){
     let interval = setInterval(()=>{
-      date = new Date().getTime();
-      if(date > nextDate){
         setDisplayTime((prev) => {
           if(prev===0){
             playAudio();
@@ -39,8 +30,6 @@ function App() {
           
           return prev-1;
          });
-        nextDate += second;
-      }
     },1000);
     localStorage.clear();
     localStorage.setItem("interval-id", interval);
