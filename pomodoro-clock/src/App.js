@@ -2,13 +2,12 @@ import './App.css';
 import {useState, useEffect} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(3);
-  const [sessionLength, setSessionLength] = useState(5);
-  const [displayTime, setDisplayTime] = useState(5); // 25 minutes
+  const [breakLength, setBreakLength] = useState(5*60);
+  const [sessionLength, setSessionLength] = useState(25*60);
+  const [displayTime, setDisplayTime] = useState(25*60);
   const [timerOn, setTimerOn] = useState(true);
-  // const [onBreak, setOnBreak] = useState(false);
-  const [TimerLabel, setTimerLabel] = useState("session")
- // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
+  const [TimerLabel, setTimerLabel] = useState("session");
+
 
   useEffect(()=>{
   let second = 1000;
@@ -26,7 +25,6 @@ function App() {
 
           }
           else if(prev<=0 && TimerLabel !=="session"){
-            // playAudio();
             setTimerLabel("session");
             return sessionLength;
           }
