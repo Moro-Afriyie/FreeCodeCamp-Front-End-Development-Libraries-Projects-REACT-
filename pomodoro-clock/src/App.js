@@ -8,7 +8,6 @@ function App() {
   const [timerOn, setTimerOn] = useState(true);
   const [TimerLabel, setTimerLabel] = useState("session");
   const myAudio = useRef();
-  // const context = new AudioContext();
 
   useEffect(()=>{
   if(!timerOn){
@@ -50,9 +49,6 @@ function App() {
   }
 
   const playAudio = ()=>{
-    // let audio = document.getElementById("beep");
-    // audio.currentTime = 0;
-    // audio.play();
     if(myAudio.current !== null){
       myAudio.current.currentTime = 0;
       myAudio.current.play();
