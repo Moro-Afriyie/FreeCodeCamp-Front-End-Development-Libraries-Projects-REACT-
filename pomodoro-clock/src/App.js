@@ -8,7 +8,7 @@ function App() {
   const [timerOn, setTimerOn] = useState(true);
   // const [onBreak, setOnBreak] = useState(false);
   const [TimerLabel, setTimerLabel] = useState("session")
-  // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
+  const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
   useEffect(()=>{
   let second = 1000;
@@ -20,7 +20,7 @@ function App() {
       if(date > nextDate){
         setDisplayTime((prev) => {
           if(prev<=0 && TimerLabel ==="session"){
-            // playAudio();
+            playAudio();
             setTimerLabel("break");
             return breakLength;
 
@@ -43,7 +43,7 @@ function App() {
   }
 
   return () => clearInterval(localStorage.getItem("interval-id"));
-  
+
   },[breakLength, displayTime, TimerLabel, sessionLength, timerOn]);
 
 
@@ -53,11 +53,11 @@ function App() {
     return `${minutes> 9 ? minutes : "0" + minutes}:${seconds>9 ? seconds : "0" + seconds}` 
   }
 
-  // const playAudio = ()=>{
-  //   let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
-  //   audio.currentTime = 0;
-  //   audio.play();
-  // }
+  const playAudio = ()=>{
+    // let audio = new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav");
+    audio.currentTime = 0;
+    audio.play();
+  }
  
   const handleChangeBreakLength = (number, type)=>{
     if(type==="break"){
@@ -87,69 +87,18 @@ function App() {
   }
 
   const controlTimer =()=>{
-  // let second = 1000;
-  // let date = new Date().getTime(); // get the current date in seconds
-  // let nextDate = new Date().getTime() + second;
-  // // let onBreakVariable = onBreak;
-  // if(!timerOn){
-  //   let interval = setInterval(()=>{
-  //     date = new Date().getTime();
-  //     let onBreakVariable = onBreak;
-  //     if(date > nextDate){
-  //       setDisplayTime((prev) => {
-  //         // console.log({prev, onBreakVariable});
-  //         if(prev<=0 && !onBreakVariable){
-  //           playAudio();
-  //           onBreakVariable = true;
-  //           setOnBreak(true);
-  //         //   console.log({onBreakVariable});
-  //         //  console.log({breakLength, displayTime,onBreak, onBreakVariable});
-  //          return breakLength; // so that the display time is equal to the break time = 5 minutes
-  //         }
-  //         else if(prev<=0 && onBreakVariable){
-  //           playAudio();
-  //           onBreakVariable = false;
-  //           setOnBreak(true);
-  //           console.log({sessionLength, displayTime,onBreak });
-  //           return sessionLength;
-       
-  //         }
-  //       //   if(prev<=0 && onBreak ==="break"){
-  //       //     playAudio();
-  //       //     setOnBreak("session");
-  //       //     console.log({onBreak})
-  //       //     return breakLength;
-
-  //       //   }
-  //       //   else if(prev<=0 && onBreak ==="session"){
-  //       //     playAudio();
-  //       //     setOnBreak("break");
-  //       //     console.log({onBreak})
-  //       //     return sessionLength;
-  //       //   }
-  //         return prev-1;
-  //        });
-  //       nextDate += second;
-  //     }
-  //   },30) //update it every 30 milliseconds
-  //   localStorage.clear();
-  //   localStorage.setItem("interval-id", interval);
-  // }
-  // if(timerOn){
-  //   clearInterval(localStorage.getItem("interval-id"));
-  // }
-  // setTimerOn(!timerOn);
   setTimerOn(!timerOn);
-  console.log({timerOn});
   }
 
   const handleResetTime = ()=>{
- clearInterval(localStorage.getItem("interval-id"));
- setTimerOn(true);
+  clearInterval(localStorage.getItem("interval-id"));
+  setTimerOn(true);
   setDisplayTime(25*60);
   setBreakLength(5*60);
   setSessionLength(25*60);
   setTimerLabel("session");
+  audio.currentTime = 0;
+  audio.pause();
   }
 
   return (
