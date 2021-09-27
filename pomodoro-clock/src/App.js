@@ -9,6 +9,10 @@ function App() {
   const [onBreak, setOnBreak] = useState(false);
   // const [audio, setAudio] = useState(new Audio("https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"))
 
+  useEffect(()=>{
+
+  });
+
   const formatTime = (time)=>{
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
