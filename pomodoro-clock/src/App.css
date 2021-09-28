@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  font-family: Russo One, sans-serif;
+  background-color: #b2bec3;
 }
 .time-left-container {
   background-color: #f9f5f5;
