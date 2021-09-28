@@ -4,9 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+/* body {
   font-family: Russo One, sans-serif;
   background-color: #b2bec3;
+} */
+.title {
+  text-align: center;
+  margin: 2rem 0;
+  font-family: Russo One, sans-serif;
 }
 .time-left-container {
   background-color: #f9f5f5;
