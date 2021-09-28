@@ -28,6 +28,9 @@ main {
   width: 100%;
   border: 1px solid blue;
 }
+.time-controls > * {
+  flex-basis: 100%;
+}
 #time-left-container {
   background-color: #f9f5f5;
   box-shadow: 0px 1px 7px -4px rgba(0, 0, 0, 0.75) inset;
