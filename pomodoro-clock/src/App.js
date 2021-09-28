@@ -2,19 +2,26 @@ import './App.css';
 import {useState, useEffect, useRef} from 'react';
 
 function App() {
-  const [breakLength, setBreakLength] = useState(5*60);
-  const [sessionLength, setSessionLength] = useState(25*60);
-  const [displayTime, setDisplayTime] = useState(25*60);
+  const [breakLength, setBreakLength] = useState(3);
+  const [sessionLength, setSessionLength] = useState(5);
+  const [displayTime, setDisplayTime] = useState(5);
   const [timerOn, setTimerOn] = useState(true);
   const [TimerLabel, setTimerLabel] = useState("session");
   const myAudio = useRef();
+
+  // used this to fix the audio bug and passed the test cases
+  useEffect(()=>{
+    if(displayTime===0){
+       playAudio();
+    }
+  },[displayTime]);
 
   useEffect(()=>{
   if(!timerOn){
     let interval = setInterval(()=>{
         setDisplayTime((prev) => {
           if(prev===0){
-            playAudio();
+            // playAudio();
         
             if(TimerLabel ==="session"){
               setTimerLabel("break");
