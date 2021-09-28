@@ -8,15 +8,25 @@
   font-family: Russo One, sans-serif;
   background-color: #b2bec3;
 } */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .title {
   text-align: center;
   margin: 2rem 0;
   font-family: Russo One, sans-serif;
 }
+.container {
+  border: 1px solid red;
+  width: 46rem;
+}
 .time-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  border: 1px solid blue;
 }
 #time-left-container {
   background-color: #f9f5f5;
