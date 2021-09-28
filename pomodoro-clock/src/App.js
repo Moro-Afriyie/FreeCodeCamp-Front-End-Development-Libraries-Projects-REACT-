@@ -20,20 +20,14 @@ function App() {
   if(!timerOn){
     let interval = setInterval(()=>{
         setDisplayTime((prev) => {
-          if(prev===0){
-            // playAudio();
-        
-            if(TimerLabel ==="session"){
+            if(prev===0 && TimerLabel ==="session"){
               setTimerLabel("break");
               return breakLength;
-
             }
-            else if(TimerLabel !=="session"){
+            else if(prev===0 && TimerLabel !=="session"){
               setTimerLabel("session");
               return sessionLength;
             }
-          }
-          
           return prev-1;
          });
     },1000);
