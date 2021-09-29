@@ -33,7 +33,7 @@ main {
 .time-controls > * {
   flex-basis: 100%;
 }
-#timer-container{
+.timer-container{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,8 @@ main {
   gap: 2rem;
 }
 #timer-label{
-  
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 #time-left-container {
   display: flex;

@@ -127,21 +127,23 @@ function App() {
               <h1 id="time-left">{formatTime(displayTime)}</h1>
             </div>
         </div>
-        <button className="control-buttons" onClick={controlTimer} id="start_stop">
-          {timerOn? <span className="material-icons">
-                  play_circle
-                  </span> : <span className="material-icons">
-                  pause_circle_filled
-                  </span>
-          }
-        </button>
-        <div className="reset-button">
-          <button onClick={handleResetTime} id="reset">
-            <span className="material-icons">
-                  restart_alt
-            </span>
+        <section className="controls-container">
+          <button className="control-buttons" onClick={controlTimer} id="start_stop">
+            {timerOn? <span className="material-icons">
+                    play_circle
+                    </span> : <span className="material-icons">
+                    pause_circle_filled
+                    </span>
+            }
           </button>
-        </div>
+          <div className="reset-button">
+            <button onClick={handleResetTime} id="reset">
+              <span className="material-icons">
+                    restart_alt
+              </span>
+            </button>
+          </div>
+        </section>
         <audio
         id="beep"
         src ="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
