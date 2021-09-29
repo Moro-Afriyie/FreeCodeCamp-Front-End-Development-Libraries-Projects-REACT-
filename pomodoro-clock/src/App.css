@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* body {
-  font-family: Russo One, sans-serif;
-  background-color: #b2bec3;
-} */
+body {
+  font-family: "Poppins" , sans-serif;
+  /* background-color: #b2bec3; */
+}
 main {
   display: flex;
   flex-direction: column;
@@ -20,7 +21,8 @@ main {
 }
 .container {
   border: 1px solid red;
-  width: 46rem;
+  max-width: 46rem;
+  width:  100%;
 }
 .time-controls {
   display: flex;
