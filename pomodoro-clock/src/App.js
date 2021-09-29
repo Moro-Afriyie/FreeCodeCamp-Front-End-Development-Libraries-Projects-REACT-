@@ -1,5 +1,6 @@
 import './App.css';
 import TimeControls from './TimeControls';
+import DisplayTimer from './DisplayTimer';
 import {useState, useEffect, useRef} from 'react';
 
 function App() {
@@ -43,12 +44,6 @@ function App() {
 
   },[breakLength, displayTime, TimerLabel, sessionLength, timerOn]);
 
-
-  const formatTime = (time)=>{
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    return `${minutes> 9 ? minutes : "0" + minutes}:${seconds>9 ? seconds : "0" + seconds}` 
-  }
 
   const playAudio = ()=>{
     if(myAudio.current !== null){
@@ -116,15 +111,19 @@ function App() {
           />
         </section>
         <section className="App">
-          <div className="timer-container">
+          {/* <div className="timer-container">
             <div id="timer-label">
               {TimerLabel==="session"? <h2>Session</h2> : <h2>Break</h2>}
             </div>
             <div id="time-left-container">
               <h1 id="time-left">{formatTime(displayTime)}</h1>
             </div>
-          </div>
-        <section className="controls-container">
+          </div> */}
+          <DisplayTimer 
+          TimerLabel={TimerLabel}
+          displayTime = {displayTime}
+          />
+          <section className="controls-container">
           <button className="control-buttons" onClick={controlTimer} id="start_stop">
             {timerOn? <span className="material-icons">
                     play_circle
