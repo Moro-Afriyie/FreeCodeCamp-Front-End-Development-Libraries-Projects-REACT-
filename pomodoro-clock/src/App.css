@@ -7,7 +7,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  /* background-color: #b2bec3; */
+  background-color: #a4b0be;
 }
 main {
   display: flex;
@@ -20,19 +20,17 @@ main {
   font-family: Russo One, sans-serif;
 }
 .container {
-  border: 1px solid red;
   max-width: 46rem;
   width: 100%;
 }
 p {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: bold;
 }
 .time-controls {
   display: flex;
   align-items: center;
   width: 100%;
-  border: 1px solid blue;
 }
 .button-container {
   display: flex;
@@ -96,4 +94,14 @@ button {
 }
 .controls-container button span {
   font-size: 2.2rem;
+}
+
+@media screen and (max-width: 450px) {
+  .time-controls {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #time-left-container {
+    max-width: 16rem;
+  }
 }
