@@ -33,9 +33,18 @@ main {
 .time-controls > * {
   flex-basis: 100%;
 }
+#timer-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 #time-left-container {
   background-color: #f9f5f5;
   box-shadow: 0px 1px 7px -4px rgba(0, 0, 0, 0.75) inset;
   -webkit-box-shadow: 0px 1px 7px -4px rgba(0, 0, 0, 0.75) inset;
   -moz-box-shadow: 0px 1px 7px -4px rgba(0, 0, 0, 0.75) inset;
+  height: 10rem;
+  max-width: 26rem;
+  width: 100%;
 }
