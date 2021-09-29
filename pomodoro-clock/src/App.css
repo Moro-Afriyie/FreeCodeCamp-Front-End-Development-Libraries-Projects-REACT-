@@ -38,6 +38,10 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 2rem;
+}
+#timer-label{
+  margin-top: 2rem;
 }
 #time-left-container {
   background-color: #f9f5f5;
