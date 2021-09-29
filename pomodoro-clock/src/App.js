@@ -1,7 +1,7 @@
 import './App.css';
-import TimeControls from './TimeControls';
-import DisplayTimer from './DisplayTimer';
-import ButtonControls from './ButtonControls';
+import TimeControls from './components//TimeControls';
+import DisplayTimer from './components//DisplayTimer';
+import ButtonControls from './components/ButtonControls';
 import {useState, useEffect, useRef} from 'react';
 
 function App() {
@@ -116,23 +116,6 @@ function App() {
             TimerLabel={TimerLabel}
             displayTime={displayTime}
             />
-            {/* <section className="controls-container">
-            <button className="control-buttons" onClick={controlTimer} id="start_stop">
-              {timerOn? <span className="material-icons">
-                      play_circle
-                      </span> : <span className="material-icons">
-                      pause_circle_filled
-                      </span>
-              }
-            </button>
-            <div className="reset-button">
-              <button onClick={handleResetTime} id="reset">
-                <span className="material-icons">
-                      restart_alt
-                </span>
-              </button>
-            </div>
-          </section> */}
           <ButtonControls
           controlTimer={controlTimer}
           timerOn={timerOn}
