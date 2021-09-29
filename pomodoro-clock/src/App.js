@@ -1,6 +1,7 @@
 import './App.css';
 import TimeControls from './TimeControls';
 import DisplayTimer from './DisplayTimer';
+import ButtonControls from './ButtonControls';
 import {useState, useEffect, useRef} from 'react';
 
 function App() {
@@ -111,43 +112,40 @@ function App() {
           />
         </section>
         <section className="App">
-          {/* <div className="timer-container">
-            <div id="timer-label">
-              {TimerLabel==="session"? <h2>Session</h2> : <h2>Break</h2>}
-            </div>
-            <div id="time-left-container">
-              <h1 id="time-left">{formatTime(displayTime)}</h1>
-            </div>
-          </div> */}
-          <DisplayTimer 
-          TimerLabel={TimerLabel}
-          displayTime = {displayTime}
-          />
-          <section className="controls-container">
-          <button className="control-buttons" onClick={controlTimer} id="start_stop">
-            {timerOn? <span className="material-icons">
-                    play_circle
-                    </span> : <span className="material-icons">
-                    pause_circle_filled
-                    </span>
-            }
-          </button>
-          <div className="reset-button">
-            <button onClick={handleResetTime} id="reset">
-              <span className="material-icons">
-                    restart_alt
-              </span>
+            <DisplayTimer 
+            TimerLabel={TimerLabel}
+            displayTime={displayTime}
+            />
+            {/* <section className="controls-container">
+            <button className="control-buttons" onClick={controlTimer} id="start_stop">
+              {timerOn? <span className="material-icons">
+                      play_circle
+                      </span> : <span className="material-icons">
+                      pause_circle_filled
+                      </span>
+              }
             </button>
-          </div>
+            <div className="reset-button">
+              <button onClick={handleResetTime} id="reset">
+                <span className="material-icons">
+                      restart_alt
+                </span>
+              </button>
+            </div>
+          </section> */}
+          <ButtonControls
+          controlTimer={controlTimer}
+          timerOn={timerOn}
+          handleResetTime={handleResetTime}
+          />
+          <audio
+          id="beep"
+          src ="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+          type="audio"
+          ref={myAudio}
+          >
+          </audio>
         </section>
-        <audio
-        id="beep"
-        src ="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-        type="audio"
-        ref={myAudio}
-        >
-        </audio>
-      </section>
       </section>
     </main>
   );
