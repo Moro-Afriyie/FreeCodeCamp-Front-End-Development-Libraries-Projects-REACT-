@@ -1,4 +1,5 @@
 import './App.css';
+import TimeControls from './TimeControls';
 import {useState, useEffect, useRef} from 'react';
 
 function App() {
@@ -101,15 +102,6 @@ function App() {
       <h1 className="title">Pomodoro Clock</h1>
       <section className="container">
         <section className="time-controls">
-          {/* <div id="break-label">
-            <p>Break Length</p>
-            <div className="button-container">
-              <button id="break-decrement" onClick={()=> handleChangeBreakLength(-60,"break")}><i className="fa fa-arrow-circle-down"></i></button>
-              <p id="break-length">{Math.floor(breakLength/60)}</p>
-              <button id="break-increment" onClick={()=> handleChangeBreakLength(60,"break")}><i className="fa fa-arrow-circle-up"></i></button>
-            </div>
-          </div> */}
-          {/* {timeLength, handleChangeBreakLength,type,label} = props; */}
           <TimeControls 
             timeLength={breakLength}
             handleChangeBreakLength = {handleChangeBreakLength}
@@ -122,14 +114,6 @@ function App() {
             type="session"
             label="Session Length"
           />
-          {/* <div id="session-label">
-            <p>Session Length</p>
-            <div className="button-container">
-              <button id="session-decrement" onClick={()=> handleChangeBreakLength(-60,"session")} ><i className="fa fa-arrow-circle-down"></i></button>
-              <p id="session-length">{Math.floor(sessionLength/60)}</p>
-              <button id="session-increment" onClick={()=> handleChangeBreakLength(60,"session")}><i className="fa fa-arrow-circle-up"></i></button>
-            </div>
-          </div> */}
         </section>
         <section className="App">
           <div className="timer-container">
@@ -139,7 +123,7 @@ function App() {
             <div id="time-left-container">
               <h1 id="time-left">{formatTime(displayTime)}</h1>
             </div>
-        </div>
+          </div>
         <section className="controls-container">
           <button className="control-buttons" onClick={controlTimer} id="start_stop">
             {timerOn? <span className="material-icons">
@@ -164,24 +148,11 @@ function App() {
         ref={myAudio}
         >
         </audio>
-        </section>
+      </section>
       </section>
     </main>
   );
 }
 
-const TimeControls =(props)=>{
- const {timeLength, handleChangeBreakLength,type,label} = props;
-return (
-  <div id={`${type}-label`}>
-      <p>{label}</p>
-        <div className="button-container">
-            <button id={`${type}-decrement`} onClick={()=> handleChangeBreakLength(-60,type)}><i className="fa fa-arrow-circle-down"></i></button>
-            <p id={`${type}-length`}>{Math.floor(timeLength/60)}</p>
-            <button id={`${type}-increment`} onClick={()=> handleChangeBreakLength(60,type)}><i className="fa fa-arrow-circle-up"></i></button>
-        </div>
-  </div>
-)
-}
 
 export default App;
