@@ -1,6 +1,6 @@
 # React Calculator App
 
-This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
+This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator).
 
 ## Table of contents
 
