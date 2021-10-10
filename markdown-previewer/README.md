@@ -37,7 +37,7 @@ This is a solution to the [Build a 25 + 5 Clock](https://www.freecodecamp.org/le
 
 ### Screenshot
 
-![]()
+![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/markdown-previewer/src/Markdown-Previewer.png)
 
 ### Links
 
