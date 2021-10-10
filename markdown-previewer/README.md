@@ -49,7 +49,7 @@ This is a solution to the [Build a 25 + 5 Clock](https://www.freecodecamp.org/le
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
-- [React Hooks (useState, useEffect)](https://reactjs.org/docs/hooks-intro.html)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 ### Useful resources
 
