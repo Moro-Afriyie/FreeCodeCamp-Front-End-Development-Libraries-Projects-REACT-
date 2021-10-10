@@ -59,7 +59,7 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp](http
 
 ### Links
 
-- Solution URL: []()
+- Solution URL: [https://codepen.io/moro-afriyie/pen/WNjVjdb](https://codepen.io/moro-afriyie/pen/WNjVjdb)
 - Live Site URL: []()
 
 ## My process
