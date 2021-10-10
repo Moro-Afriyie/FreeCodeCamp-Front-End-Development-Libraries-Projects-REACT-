@@ -1,6 +1,6 @@
 # Markdown Previewer
 
-This is a solution to the [Build a 25 + 5 Clock](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock).
+This is a solution to the [Build a 25 + 5 Clock Challenge on FreeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock).
 
 ## Table of contents
 

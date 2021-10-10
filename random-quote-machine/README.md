@@ -1,6 +1,6 @@
 # Random Quote Machine
 
-This is a solution to the [Build a Random Quote Machine](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine).
+This is a solution to the [Build a Random Quote Machine Challenge on FreeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine).
 
 ## Table of contents
 
