@@ -39,7 +39,7 @@ This is a solution to the [Build a Drum Machine Challenge on FreeCodeCamp](https
 
 ### Screenshot
 
-![]()
+![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/drum-machine/src/Drum-Machine.png)
 
 ### Links
 
