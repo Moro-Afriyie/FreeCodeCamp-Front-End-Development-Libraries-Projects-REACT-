@@ -2,6 +2,23 @@
 
 This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
 
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  <!-- - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development) -->
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
 ### Here are the User Stories the app had to fulfill:
 
 <!-- ![image](./public/screenshot-calculator.png) -->
@@ -35,3 +52,27 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
 **User Story #14:** Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
 
 **User Story #15:** My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).
+
+### Screenshot
+
+![]()
+
+### Links
+
+- Solution URL: []()
+- Live Site URL: []()
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+- [React Hooks (useState, useEffect)](https://reactjs.org/docs/hooks-intro.html)
+
+### Useful resources
+
+<!-- - [React With TypeScript Best Practices](https://www.sitepoint.com/react-with-typescript-best-practices/) - This is an amazing article which helped me finally understand using react and typeScript. I'd recommend it to anyone still learning this concept.
+- [React with TypeScript cheatsheet](https://github.com/typescript-cheatsheets/react) - This helped me for using react and typescript. I really liked this pattern and will use it going forward. -->
+
+## Author
+
+- Website - [Moro Owusu Afriyie]()
+- Twitter - [@NkatieBorga](https://twitter.com/NkatieBorga)
