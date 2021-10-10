@@ -17,7 +17,7 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
 
 ## Overview
 
-### The challenge
+## The challenge
 
 ### Here are the User Stories the app had to fulfill:
 
@@ -61,6 +61,8 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
 
 - Solution URL: []()
 - Live Site URL: []()
+
+## My process
 
 ### Built with
 
