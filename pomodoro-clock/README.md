@@ -79,7 +79,7 @@ This is a solution to the [Build a 25 + 5 Clock](https://www.freecodecamp.org/le
 
 ### Screenshot
 
-![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/drum-machine/src/Drum-Machine.png)
+![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/pomodoro-clock/src/pomodoro-clock.png)
 
 ### Links
 
