@@ -45,7 +45,7 @@ This is a solution to the [Build a Random Quote Machine Challenge on FreeCodeCam
 
 ### Screenshot
 
-![]()
+![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/random-quote-machine/src/random-quote-machine.png)
 
 ### Links
 
