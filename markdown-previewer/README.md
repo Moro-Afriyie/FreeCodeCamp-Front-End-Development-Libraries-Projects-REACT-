@@ -41,7 +41,7 @@ This is a solution to the [Build a 25 + 5 Clock](https://www.freecodecamp.org/le
 
 ### Links
 
-- Solution URL: [https://codepen.io/moro-afriyie/pen/JjJxyQR](https://codepen.io/moro-afriyie/pen/JjJxyQR)
+- Solution URL: [https://codepen.io/moro-afriyie/pen/ZEKqErr](https://codepen.io/moro-afriyie/pen/ZEKqErr)
 - Live Site URL: []()
 
 ## My process
