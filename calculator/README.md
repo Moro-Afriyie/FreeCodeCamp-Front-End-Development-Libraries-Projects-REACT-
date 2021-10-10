@@ -1,8 +1,6 @@
 # React Calculator App
 
-## App developed as a challenge for FreeCodeCamp.
-
-## The application was built using with create-react-app.
+This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp]().
 
 ### Here are the User Stories the app had to fulfill:
 
