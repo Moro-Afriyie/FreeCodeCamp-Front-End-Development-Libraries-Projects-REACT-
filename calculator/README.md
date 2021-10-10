@@ -19,7 +19,7 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp](http
 
 ## The challenge
 
-### Here are the User Stories the app had to fulfill:
+### Here are the User Stories I had to fulfill:
 
 <!-- ![image](./public/screenshot-calculator.png) -->
 

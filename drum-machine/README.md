@@ -19,7 +19,7 @@ This is a solution to the [Build a Drum Machine Challenge on FreeCodeCamp](https
 
 ## The challenge
 
-### Here are the User Stories the app had to fulfill:
+### Here are the User Stories I had to fulfill:
 
 <!-- ![image](./public/screenshot-calculator.png) -->
 
