@@ -55,7 +55,7 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp](http
 
 ### Screenshot
 
-![]()
+![](https://github.com/Moro-Afriyie/FreeCodeCamp-Front-End-Development-Libraries-Projects-REACT-/blob/main/calculator/src/calculator-img.png)
 
 ### Links
 
