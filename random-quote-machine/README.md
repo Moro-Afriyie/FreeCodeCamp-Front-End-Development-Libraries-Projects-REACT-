@@ -50,7 +50,7 @@ This is a solution to the [Build a Random Quote Machine Challenge on FreeCodeCam
 ### Links
 
 - Solution URL: [https://codepen.io/moro-afriyie/pen/MWmqQqb](https://codepen.io/moro-afriyie/pen/MWmqQqb)
-- Live Site URL: []()
+- Live Site URL: [https://random-quote-machine-e59249.netlify.app/](https://random-quote-machine-e59249.netlify.app/)
 
 ## My process
 
