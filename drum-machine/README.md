@@ -44,7 +44,7 @@ This is a solution to the [Build a Drum Machine Challenge on FreeCodeCamp](https
 ### Links
 
 - Solution URL: [https://codepen.io/moro-afriyie/pen/gOWqWJv](https://codepen.io/moro-afriyie/pen/gOWqWJv)
-- Live Site URL: []()
+- Live Site URL: [https://drum-machine-c8193a.netlify.app/](https://drum-machine-c8193a.netlify.app/)
 
 ## My process
 
