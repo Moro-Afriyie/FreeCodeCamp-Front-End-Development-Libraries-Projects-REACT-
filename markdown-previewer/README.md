@@ -42,7 +42,7 @@ This is a solution to the [Build a 25 + 5 Clock Challenge on FreeCodeCamp](https
 ### Links
 
 - Solution URL: [https://codepen.io/moro-afriyie/pen/ZEKqErr](https://codepen.io/moro-afriyie/pen/ZEKqErr)
-- Live Site URL: [https://markdown-previewer-03cf05.netlify.app/](https://markdown-previewer-03cf05.netlify.app/)
+- Live Site URL: [https://markdown-previewer-453e83.netlify.app/](https://markdown-previewer-453e83.netlify.app/)
 
 ## My process
 
