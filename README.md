@@ -4,6 +4,6 @@ This repository contains the projects in the Front End Development Libraries cou
 
 - Random Quote Machine : [https://codepen.io/moro-afriyie/pen/MWmqQqb](https://codepen.io/moro-afriyie/pen/MWmqQqb)
 - Markdown Previewer : [https://codepen.io/moro-afriyie/pen/ZEKqErr](https://codepen.io/moro-afriyie/pen/ZEKqErr)
-- Drum Machine : [https://codepen.io/moro-afriyie/pen/gOWqWJv](https://codepen.io/moro-afriyie/pen/gOWqWJv)
-- Calculator : [https://codepen.io/moro-afriyie/pen/WNjVjdb](https://codepen.io/moro-afriyie/pen/WNjVjdb)
-- Pomodoro Clock : [https://codepen.io/moro-afriyie/pen/JjJxyQR](https://codepen.io/moro-afriyie/pen/JjJxyQR)
+- Drum Machine : [ https://drum-machine-c8193a.netlify.app/]( https://drum-machine-c8193a.netlify.app/)
+- Calculator : [https://calculator-458f04.netlify.app/](https://calculator-458f04.netlify.app/)
+- Pomodoro Clock : [https://pomodoro-clock-3c4373.netlify.app/](https://pomodoro-clock-3c4373.netlify.app/)
