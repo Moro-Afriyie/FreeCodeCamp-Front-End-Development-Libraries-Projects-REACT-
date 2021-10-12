@@ -60,7 +60,7 @@ This is a solution to the [JavaScript Calculator Challenge on FreeCodeCamp](http
 ### Links
 
 - Solution URL: [https://codepen.io/moro-afriyie/pen/WNjVjdb](https://codepen.io/moro-afriyie/pen/WNjVjdb)
-- Live Site URL: []()
+- Live Site URL: [https://calculator-458f04.netlify.app/](https://calculator-458f04.netlify.app/)
 
 ## My process
 
